@@ -1,3 +1,4 @@
+
 from capa_datos_persona.Usuario import Usuario
 from capa_datos_persona.cursor_del_pool import CursorDelPool
 from logger_base import log
@@ -48,3 +49,4 @@ class UsuarioDAO:
             valores = _(usuario.id_usuario)
             cursor.execute(cls._ELIMINAR, valores)
             return cursor.rowcount
+        
