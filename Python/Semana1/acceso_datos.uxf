@@ -1,0 +1,43 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLPackage</id><coordinates><x>50</x><y>20</y><w>640</w><h>540</h></coordinates><panel_attributes>acceso_datos
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>80</x><y>60</y><w>270</w><h>230</h></coordinates><panel_attributes>conexion
+--
+_-DATABASE:String_
+_-USERNAME:String_
+_-PASSWORD:String_
+_-DB PORT:String_
+_-HOST:String_
+_-conexion:conection_
+_-cursor:Cursor_
+--
+_+obtenerConexion(cls):Connection_
+_+obtenerCursor(cls);Cursor_
+_+cerrar(cls)_
+--
+Responsabilidades:
+Administrar la conexion de base de datos</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>460</x><y>60</y><w>210</w><h>190</h></coordinates><panel_attributes>Persona
+--
+-id_persona:int
+-nombre:String
+-apellido:String
+-email:String
+--
++__str__():String
++metodo Get/Set de cada atributo
+--
+Responsabilidades:
+crear objeto de la clase persona</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>180</x><y>320</y><w>360</w><h>210</h></coordinates><panel_attributes>PersonaDao
+--
+_-SELECCIONAR:String_
+_-INSERTAR:String_
+_-ACTUALIZAR:String_
+_-ELIMINAR:String_
+--
+_+seleccionar(cls)_
+_+insertar(cls,persona)_
+_+actualizar(cls,persona)_
+_+eliminar(cls,persona)_
+--
+Responsibilidades:
+Realizar todas las operaciones sobre la base de
+ datos de la entidad Persona</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>530</x><y>240</y><w>70</w><h>170</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;150;50;150;50;10</additional_attributes></element><element><id>Relation</id><coordinates><x>140</x><y>280</y><w>60</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>40;120;10;120;10;10</additional_attributes></element></diagram>
