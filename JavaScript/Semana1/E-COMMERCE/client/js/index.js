@@ -9,5 +9,3 @@ productos.forEach((product) =>{
     `;
     shopContent.append(content);
 });
-
-
