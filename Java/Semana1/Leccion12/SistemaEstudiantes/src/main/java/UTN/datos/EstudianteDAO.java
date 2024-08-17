@@ -44,7 +44,7 @@ public class EstudianteDAO {
     } // Fin método listar
 
     // Método para buscar por id.
-    public boolean buscarEstudiantesId(Estudiante estudiante) {
+    public boolean buscarEstudiantePorId(Estudiante estudiante) {
         PreparedStatement ps;
         ResultSet rs;
         Connection conexion = getConnection();
