@@ -1,0 +1,90 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #8A2BE2, #4B0082, #0000FF);
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #0077cc;
+}
+
+
+section {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+button {
+    background-color: #008CBA;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #007CBA;
+}
+
+
+input[type="radio"] {
+    margin: 10px;
+}
+
+
+label {
+    display: block;
+    margin: 5px 0;
+}
+
+
+#reglas-del-juego ol {
+    text-align: left;
+    display: inline-block;
+}
+
+#reglas-del-juego li {
+    margin: 10px 0;
+}
+
+.boton-seleccionar {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+#boton-personaje {
+     flex-basis: 100%;
+    margin-top: 20px; 
+}
+strong {
+    color: #d35400;
+}
+label, input[type="radio"] {
+    margin: 0 10px;
+}
+
+#seleccionar-personaje {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#seleccionar-personaje label, #seleccionar-personaje input[type="radio"] {
+    margin: 10px;
+}
+
+#seleccionar-personaje h2 {
+    width: 100%;
+}
+
+
