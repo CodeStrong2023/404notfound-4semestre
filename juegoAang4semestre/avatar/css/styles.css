@@ -4,7 +4,7 @@ body {
     color: #333;
     text-align: center;
     padding: 20px;
-}
+} 
 
 h1 {
     color: #0077cc;
@@ -14,7 +14,7 @@ h1 {
 section {
     margin: 20px 0;
     padding: 20px;
-    background-color: #fff;
+    background: linear-gradient(to right, #44ec22, #1dad54, #0ff70f);
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
