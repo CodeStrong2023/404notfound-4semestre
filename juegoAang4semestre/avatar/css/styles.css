@@ -1,15 +1,17 @@
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #8A2BE2, #4B0082, #0000FF);
+    background-image: url('https://images.hive.blog/p/23KQwnti57stuXpnvnU2ByoTTe7rtyo8v5uYk1kPymfyjguJmftL7537Va9qDKdi6eQd7kza8Bvp8mLt5nqCwoxzpSJnRqo?format=match&mode=fit');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: #333;
     text-align: center;
     padding: 20px;
-} 
+}
 
 h1 {
     color: #0077cc;
 }
-
 
 section {
     margin: 20px 0;
@@ -18,7 +20,6 @@ section {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-
 
 button {
     background-color: #008CBA;
@@ -35,17 +36,14 @@ button:hover {
     background-color: #007CBA;
 }
 
-
 input[type="radio"] {
     margin: 10px;
 }
-
 
 label {
     display: block;
     margin: 5px 0;
 }
-
 
 #reglas-del-juego ol {
     text-align: left;
@@ -55,12 +53,12 @@ label {
 #reglas-del-juego li {
     margin: 10px 0;
 }
+
 #seleccionar-personaje {
     display: flex;
     flex-direction: column;
     align-items: flex;
 }
-
 
 .boton-seleccionar {
     width: 100%;
@@ -68,16 +66,56 @@ label {
     margin-top: 20px;
 }
 
-
 #boton-personaje {
-     flex-basis: 100%;
+    flex-basis: 100%;
     margin-top: 20px; 
 }
+
 strong {
     color: #d35400;
 }
+
 label, input[type="radio"] {
     margin: 0 10px;
 }
 
 
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    section {
+        margin: 10px 0;
+        padding: 10px;
+    }
+
+    button {
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+
+    #seleccionar-personaje {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    section {
+        padding: 5px;
+    }
+
+    button {
+        margin: 5px;
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .boton-seleccionar, #boton-personaje {
+        margin-top: 10px;
+    }
+}
