@@ -15,4 +15,3 @@ print(f"a octal: {a}")
 # Sistema hexadecimal
 a = 0xA
 print(f"a hexadecimal: {a}")
-
