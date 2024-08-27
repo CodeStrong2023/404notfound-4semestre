@@ -15,3 +15,13 @@ print(f"a octal: {a}")
 # Sistema hexadecimal
 a = 0xA
 print(f"a hexadecimal: {a}")
+
+#base decimal
+a=int('23',10)
+print(f"a decimal: {a}")
+
+#base binario
+a=int('10111',2)
+print(f"a base binario: {a}")
+
+
