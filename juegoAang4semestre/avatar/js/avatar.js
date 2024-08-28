@@ -3,6 +3,10 @@ let ataqueEnemigo
 let vidasJugador = 3 //Sabemos en el estado en comienzan estas variables
 let vidasEnemigo = 3
 
+
+
+
+
 function iniciarJuego() {
     let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
     sectionSeleccionarAtaque.style.display = 'none'
@@ -56,6 +60,7 @@ function seleccionarPersonajeJugador() {
 
     if (inputZuko.checked) {
         spanPersonajeJugador.innerHTML = 'Zuko'
+        
     } else if (inputKatara.checked) {
         spanPersonajeJugador.innerHTML = 'Katara'
     } else if (inputAang.checked) {
@@ -162,6 +167,7 @@ function revisarVidas(){
     } else if(vidasJugador == 0){
         //Perdimos
         crearMensajeFinal("QUE PENA, HAS PERDIDO 😢😭😭😭")
+        usuarioPerdio();
     }
 }
 
@@ -195,6 +201,45 @@ function crearMensaje(resultado) {
 function reiniciarJuego(){
     location.reload()
 }
+function usuarioPerdio() {
+    // Crear un contenedor para el popup
+    var popup = document.createElement('div');
+    popup.style.position = 'fixed';
+    popup.style.top = '50%';
+    popup.style.left = '50%';
+    popup.style.transform = 'translate(-50%, -50%)';
+    popup.style.backgroundColor = 'red';
+    popup.style.color = 'white';
+    popup.style.padding = '20px';
+    popup.style.borderRadius = '10px';
+    popup.style.boxShadow = '0px 0px 10px rgba(0, 0, 0, 0.5)';
+    popup.style.zIndex = '1000';
+    popup.textContent = 'Has perdido. Mejor suerte la próxima vez.';
+
+
+    var botonCerrar = document.createElement('button');
+    botonCerrar.textContent = 'x';
+    botonCerrar.style.marginTop = '10px';
+    botonCerrar.style.padding = '10px';
+    botonCerrar.style.border = 'none';
+    botonCerrar.style.borderRadius = '5px';
+    botonCerrar.style.cursor = 'pointer';
+    botonCerrar.style.backgroundColor = 'white';
+    botonCerrar.style.color = 'red';
+
+
+    botonCerrar.addEventListener('click', function() {
+        document.body.removeChild(popup);
+    });
+
+
+    popup.appendChild(botonCerrar);
+
+
+    document.body.appendChild(popup);
+}
+
+
 
 function aleatorio(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
