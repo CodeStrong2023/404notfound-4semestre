@@ -202,7 +202,6 @@ function reiniciarJuego(){
     location.reload()
 }
 function usuarioPerdio() {
-    // Crear un contenedor para el popup
     var popup = document.createElement('div');
     popup.style.position = 'fixed';
     popup.style.top = '50%';

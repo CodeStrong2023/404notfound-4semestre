@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-image: url('https://images.hive.blog/p/23KQwnti57stuXpnvnU2ByoTTe7rtyo8v5uYk1kPymfyjguJmftL7537Va9qDKdi6eQd7kza8Bvp8mLt5nqCwoxzpSJnRqo?format=match&mode=fit');
+    background-image: url('https://www.thecoffeetoons.com/wp-content/uploads/Avatar-The-Last-Airbender-destacada-1536x864.webp');
     background-size: cover;
     background-position: center;
     background-color: rgba(255, 255, 255, 0.5);
@@ -9,7 +9,13 @@ body {
     padding: 20px;
 }
 
-
+.logo {
+    border: 5px solid #ffffff; 
+    box-shadow: 0px 0px 10px #ffffff;
+    max-width: 100%;
+    height: auto; 
+    background-color: rgba(255, 255, 255, 0.651); 
+}
 h1 {
     color: #0077cc;
 }
@@ -17,7 +23,7 @@ h1 {
 section {
     margin: 20px 0;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.774); 
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -56,10 +62,8 @@ label {
 }
 
 #seleccionar-personaje {
-    display: flex;
-    flex-direction: row;
+    display:grid;
     align-items: flex-start;
-    justify-content: space-around;
 }
 
 .opciones-personaje {
@@ -155,4 +159,9 @@ h1 img {
 .opciones-personaje label,
 .opciones-personaje input {
     display: block;
+}
+#seleccionar-personaje label {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
