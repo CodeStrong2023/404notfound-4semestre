@@ -1,35 +1,72 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-image: url('https://www.thecoffeetoons.com/wp-content/uploads/Avatar-The-Last-Airbender-destacada-1536x864.webp');
+    font-family: 'Papyrus', sans-serif;
+    background-image: url('fondo.jpg');
     background-size: cover;
     background-position: center;
     background-color: rgba(255, 255, 255, 0.5);
-    color: #333;
+    color: #fdfdfd;
     text-align: center;
     padding: 20px;
 }
 
 .logo {
-    border: 5px solid #ffffff; 
-    box-shadow: 0px 0px 10px #ffffff;
     max-width: 100%;
     height: auto; 
-    background-color: rgba(255, 255, 255, 0.651); 
-}
-h1 {
-    color: #0077cc;
+    background-color: rgba(255, 255, 255, 0); 
 }
 
+h1 {
+    color: #0077cc00;
+}
+.boton-jugar {
+    background-color: transparent; /* Asegura que las imágenes no tengan fondo */
+    border: none; /* Elimina el borde */
+    padding: 0; /* Elimina cualquier relleno que pueda crear una ilusión de fondo */
+    width: 150px; /* Ajusta el ancho según necesites */
+    height: auto; /* Mantiene la proporción original de la imagen */
+}
 section {
     margin: 20px 0;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.774); 
+    background-color: rgba(255, 255, 255, 0); 
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+.opciones-personaje img {
+    width: 150px; /* Cambia este tamaño según necesites */
+    cursor: pointer;
+    border: 2px solid #000; /* Borde de 2px de grosor y color negro */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 5px; /* Espacio entre la imagen y el borde */
+    transition: transform 0.2s ease-in-out; 
+}
+
+.opciones-personaje img:hover {
+    transform: scale(1.05); /* Agranda la imagen un 5% al pasar el ratón por encima */
+    border-color: #fcfcfb; /* Cambia el color del borde al pasar el ratón por encima */
+}
+.opciones-personaje img.seleccionado {
+    border-color: #0077cc;
+    transform: scale(1.2);
+}
+.opciones-personaje img {
+    border: 2px solid #000; /* Borde de 2px de grosor y color negro */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 5px; /* Espacio entre la imagen y el borde */
+    transition: transform 0.2s ease-in-out; /* Efecto de transición para la transformación */
+}
+.opciones-personaje {
+    background-color: transparent; /* Elimina el fondo del contenedor */
+    box-shadow: none; /* Asegúrate de que no haya sombras que puedan dar la apariencia de un fondo */
+    border: none; /* Elimina cualquier borde que pueda estar causando un contorno */
+}
+
+
+
+
 
 button {
-    background-color: #008CBA;
+    background-color: #0d1416;
     color: white;
     padding: 10px 20px;
     margin: 10px;
@@ -132,8 +169,14 @@ label {
 }
 
 @media (max-width: 480px) {
+    .opciones-personaje img {
+        width: 180px; /* Ajusta el tamaño de las imágenes para pantallas muy pequeñas */
+        margin-left: 50%;
+    }
     h1 {
         font-size: 24px;
+        
+        
     }
 
     section {
@@ -149,7 +192,9 @@ label {
     .boton-seleccionar, #boton-personaje {
         margin-top: 5px;
     }
+
 }
+
 
 h1 img {
     max-width: 40%;
@@ -164,4 +209,12 @@ h1 img {
     font-size: 1.5em;
     font-weight: bold;
     margin-bottom: 10px;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+section {
+    margin: 0;
+    padding: 50;
 }

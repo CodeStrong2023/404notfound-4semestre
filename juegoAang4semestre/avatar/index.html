@@ -79,26 +79,19 @@
             <button id="boton-jugar">Jugar</button>
         </section>
 
-    <section id="seleccionar-personaje">
-            <h2>Elige tu Personaje</h2>
+        <section id="seleccionar-personaje">
+            <h2></h2>
             <div class="opciones-personaje">
-            <label for="zuko">Zuko</label> <!--Esta etiqueta es para darle un indicador a los usuarios de que están seleccionando-->
-            <input type="radio" name="personaje" id="zuko"/> <!-- name es para agrupar todos los imputs y poder seleccionar-->
-
-            <label for="katara">Katara</label> <!--El atributo for ayuda a vincular un label con un imput a través del mismo id-->
-            <input type="radio" name="personaje" id="katara"/> <!--Acá van los personajes-->
-
-            <label for="aang">Aang</label>
-            <input type="radio" name="personaje" id="aang"/> <!--Le damos un atributo id para saber cual es el valor de cada uno-->
-
-            <label for="toph">Toph</label>
-            <input type="radio" name="personaje" id="toph"/>
-
-             </div>
-    <div class="boton-seleccionar"> <!-- Contenedor para el botón -->
-        <button id="boton-personaje">Seleccionar</button>
-    </div>
+                <img src="fotos\zokoo.jpg" alt="Zuko" id="zuko" class="personaje" onclick="seleccionarPersonaje('Zuko')">
+                <img src="fotos\Kataraa.jpg" alt="Katara" id="katara" class="personaje" onclick="seleccionarPersonaje('Katara')">
+                <img src="fotos\angg.jpg" alt="Aang" id="aang" class="personaje" onclick="seleccionarPersonaje('Aang')">
+                <img src="fotos\tohp.jpeg" alt="Toph" id="toph" class="personaje" onclick="seleccionarPersonaje('Toph')">
+            </div>
+            <div class="boton-seleccionar">
+                <button id="boton-personaje" onclick="confirmarSeleccion()">Seleccionar</button>
+            </div>
         </section>
+        
 
         <section id="seleccionar-ataque">
             <h2>Elige tu ataque</h2> <!--Se puede utilizar varias veces-->
