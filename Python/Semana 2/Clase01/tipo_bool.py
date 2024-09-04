@@ -9,3 +9,12 @@ print(f'El valor: {valor}, Resultado: {resultado}')
 valor = 0.1
 resultado = bool(valor)
 print(f'El valor: {valor}, Resultado: {resultado}')
+
+# Tipo String -> False '' cadena vacía, True demás valores.
+valor = ''
+resultado = bool(valor)
+print(f'El valor: {valor}, Resultado: {resultado}')
+
+valor = 'Hola'
+resultado = bool(valor)
+print(f'El valor: {valor}, Resultado: {resultado}')
