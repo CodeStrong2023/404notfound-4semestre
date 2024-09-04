@@ -29,6 +29,21 @@ const displayCart = () => {
     modalHeader.append(modalTitle);
 
     modalContainer.append(modalHeader);
-}
+
+    //Modal body
+    cartBtn.forEach((product) => {
+        const modalBody = document.createElement("div");
+        modalBody.className = "modal-body";
+        modalBody.innerHTML = `
+        <div class = "product">
+            <img class="product-img" src="${product.img}" />
+            <div class="product-info">
+                <h4>${product.productName}</h4>
+            </div>
+          
+        `;
+        modalContainer.append(modalBody);
+    })
+};
 
 cartBtn = document.addEventListener("click", displayCart);
