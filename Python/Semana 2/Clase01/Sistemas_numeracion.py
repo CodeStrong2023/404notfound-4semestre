@@ -16,12 +16,12 @@ print(f"a octal: {a}")
 a = 0xA
 print(f"a hexadecimal: {a}")
 
-#base decimal
-a=int('23',10)
+# base decimal
+a = int('23',10)
 print(f"a decimal: {a}")
 
-#base binario
-a=int('10111',2)
+# base binario
+a = int('10111',2)
 print(f"a base binario: {a}")
 
 # Base Octal
@@ -32,8 +32,8 @@ print(f"a = base octal: {a}")
 a = int('17', 16)
 print(f"a = base hexadecimal: {a}")
 
-#Base 5 sus valores son de 0 a 4
-a = int ("34", 5)
+# Base 5 sus valores son de 0 a 4
+a = int("34", 5)
 print(f"a = base 5:{a}")
 
 
