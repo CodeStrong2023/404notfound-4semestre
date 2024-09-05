@@ -46,3 +46,9 @@ print(f"Valor: {valor}, resultado: {resultado}")
 valor = {"Nombre": "Juan", "Apellido": "Perez"}
 resultado = bool(valor)
 print(f"Valores: {valor}, resultado: {resultado}")
+
+# Sentencias de control con bool
+if (1,):
+    print('Regresa verdadero')
+else:
+    print('Regresa falso')
