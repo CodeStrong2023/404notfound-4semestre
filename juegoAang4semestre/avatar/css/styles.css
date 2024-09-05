@@ -135,6 +135,7 @@ label {
 
     .opciones-personaje {
         flex-direction: column;
+        align-items: center;
     }
 }
 
