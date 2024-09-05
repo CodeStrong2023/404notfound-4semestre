@@ -18,3 +18,31 @@ print(f'El valor: {valor}, Resultado: {resultado}')
 valor = 'Hola'
 resultado = bool(valor)
 print(f'El valor: {valor}, Resultado: {resultado}')
+
+# Lista.
+valor = []
+resultado = bool(valor)
+print(f"Valor: {valor}, resultado: {resultado}")
+
+valor = [2, 4, 6]
+resultado = bool(valor)
+print(f"Valor: {valor}, resultado: {resultado}")
+
+# Tupla.
+valor = ()
+resultado = bool(valor)
+print(f"Valor: {valor}, resultado: {resultado}")
+
+# Tupla.
+valor = (5,)
+resultado = bool(valor)
+print(f"Valor: {valor}, resultado: {resultado}")
+
+# Diccionario.
+valor = {}
+resultado = bool(valor)
+print(f"Valor: {valor}, resultado: {resultado}")
+
+valor = {"Nombre": "Juan", "Apellido": "Perez"}
+resultado = bool(valor)
+print(f"Valores: {valor}, resultado: {resultado}")
