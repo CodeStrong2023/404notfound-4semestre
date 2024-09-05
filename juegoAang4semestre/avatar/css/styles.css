@@ -19,11 +19,11 @@ h1 {
     color: #0077cc00;
 }
 .boton-jugar {
-    background-color: transparent; /* Asegura que las imágenes no tengan fondo */
-    border: none; /* Elimina el borde */
-    padding: 0; /* Elimina cualquier relleno que pueda crear una ilusión de fondo */
-    width: 150px; /* Ajusta el ancho según necesites */
-    height: auto; /* Mantiene la proporción original de la imagen */
+    background-color: transparent; 
+    border: none; 
+    padding: 0;
+    width: 150px; 
+    height: auto; 
 }
 section {
     margin: 20px 0;
@@ -33,32 +33,32 @@ section {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 .opciones-personaje img {
-    width: 150px; /* Cambia este tamaño según necesites */
+    width: 150px; 
     cursor: pointer;
-    border: 2px solid #000; /* Borde de 2px de grosor y color negro */
-    border-radius: 10px; /* Bordes redondeados */
-    padding: 5px; /* Espacio entre la imagen y el borde */
+    border: 2px solid #000; 
+    border-radius: 10px; 
+    padding: 5px; 
     transition: transform 0.2s ease-in-out; 
 }
 
 .opciones-personaje img:hover {
-    transform: scale(1.05); /* Agranda la imagen un 5% al pasar el ratón por encima */
-    border-color: #fcfcfb; /* Cambia el color del borde al pasar el ratón por encima */
+    transform: scale(1.05); 
+    border-color: #fcfcfb; 
 }
 .opciones-personaje img.seleccionado {
     border-color: #0077cc;
     transform: scale(1.2);
 }
 .opciones-personaje img {
-    border: 2px solid #000; /* Borde de 2px de grosor y color negro */
-    border-radius: 10px; /* Bordes redondeados */
-    padding: 5px; /* Espacio entre la imagen y el borde */
-    transition: transform 0.2s ease-in-out; /* Efecto de transición para la transformación */
+    border: 2px solid #000; 
+    border-radius: 10px;
+    padding: 5px; 
+    transition: transform 0.2s ease-in-out; 
 }
 .opciones-personaje {
-    background-color: transparent; /* Elimina el fondo del contenedor */
-    box-shadow: none; /* Asegúrate de que no haya sombras que puedan dar la apariencia de un fondo */
-    border: none; /* Elimina cualquier borde que pueda estar causando un contorno */
+    background-color: transparent; 
+    box-shadow: none; 
+    border: none;
 }
 
 
@@ -88,7 +88,23 @@ label {
     display: block;
     margin: 5px 0;
 }
+#reglas-del-juego, #seleccionar-personaje {
+    font-size: 18px;
+    
+}
 
+#reglas-del-juego h4, #seleccionar-personaje h2 {
+    font-size: 24px; 
+}
+
+#reglas-del-juego {
+    background-color: #000000; 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 90%; 
+}
 #reglas-del-juego ol {
     text-align: left;
     display: inline-block;
@@ -169,14 +185,22 @@ label {
 }
 
 @media (max-width: 480px) {
-    .opciones-personaje img {
-        width: 180px; /* Ajusta el tamaño de las imágenes para pantallas muy pequeñas */
-        margin-left: 50%;
+    .opciones-personaje {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center; /* Centra los elementos hijos horizontalmente */
+        gap: 10px; /* Añade espacio entre los elementos hijos */
     }
-    h1 {
-        font-size: 24px;
-        
-        
+    
+    .opciones-personaje img {
+        width: 100%; /* Hace que las imágenes sean responsivas dentro de su contenedor */
+        max-width: 180px; /* Establece un ancho máximo para las imágenes */
+        margin: 10px 0; /* Añade un margen superior e inferior para asegurar espacio alrededor de las imágenes */
+    }
+
+    h2 {
+        font-size: 24px; /* Ajusta el tamaño del texto, aunque en tu código original mencionas h1, asegúrate de que sea el correcto */
     }
 
     section {
@@ -184,15 +208,15 @@ label {
     }
 
     button {
-        margin: 5px;
+        margin: 5px auto; /* Centra el botón horizontalmente */
         padding: 5px 3px;
         font-size: 12px;
+        display: block; /* Hace que el botón sea un bloque para permitir el centrado automático */
     }
 
     .boton-seleccionar, #boton-personaje {
         margin-top: 5px;
     }
-
 }
 
 
