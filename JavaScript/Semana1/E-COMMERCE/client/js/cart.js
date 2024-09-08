@@ -57,6 +57,7 @@ const displayCart = () => {
         modalFooter.innerHTML = `
         <div class="total-price">Total: </div>
         `;
+        modalContainer.append(modalFooter);
 };
 
 cartBtn = document.addEventListener("click", displayCart);
