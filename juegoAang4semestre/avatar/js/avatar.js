@@ -2,10 +2,7 @@ let ataqueJugador
 let ataqueEnemigo
 let vidasJugador = 3 //Sabemos en el estado en comienzan estas variables
 let vidasEnemigo = 3
-
-
-
-
+let personajeSeleccionado = null;
 
 function iniciarJuego() {
     let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
@@ -41,68 +38,80 @@ function mostrarReglas() {
     document.getElementById('boton-jugar').addEventListener('click', seleccionarPersonajeJugador);
 }
 
+function seleccionarPersonaje(personaje) {
+    // Desmarcar cualquier personaje seleccionado previamente
+    const personajes = document.querySelectorAll('.opciones-personaje img');
+    personajes.forEach(p => p.classList.remove('seleccionado'));
+
+    // Marcar el personaje seleccionado
+    personajeSeleccionado = personaje;
+    document.getElementById(personaje.toLowerCase()).classList.add('seleccionado');
+}
+
+function confirmarSeleccion() {
+    if (personajeSeleccionado) {
+        document.getElementById('personaje-jugador').innerText = personajeSeleccionado;
+        // Proceder con el juego
+        seleccionarPersonajeJugador();
+    } else {
+        alert('Por favor, selecciona un personaje.');
+    }
+}
+
 function seleccionarPersonajeJugador() {
-    let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
-    sectionSeleccionarAtaque.style.display = 'block'; //mostramos
-    document.getElementById('boton-reglas').style.display = 'none';
-    let sectionSeleccionarPersonaje = document.getElementById('seleccionar-personaje')
-    sectionSeleccionarPersonaje.style.display = 'none' //Ocultamos
-   
-    let inputZuko = document.getElementById('zuko')
-    let inputKatara = document.getElementById('katara')
-    let inputAang = document.getElementById('aang')
-    let inputToph = document.getElementById('toph')
-    let spanPersonajeJugador = document.getElementById('personaje-jugador')
+    let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque');
+    sectionSeleccionarAtaque.style.display = 'block'; // Mostramos la sección de ataque
 
+    let sectionSeleccionarPersonaje = document.getElementById('seleccionar-personaje');
+    sectionSeleccionarPersonaje.style.display = 'none'; // Ocultamos la sección de selección de personaje
 
-    document.getElementById("reglas-del-juego").style.display = "none";
-    document.getElementById('boton-reglas').style.display = 'none';
+    let spanPersonajeJugador = document.getElementById('personaje-jugador');
 
-    if (inputZuko.checked) {
-        spanPersonajeJugador.innerHTML = 'Zuko'
-        
-    } else if (inputKatara.checked) {
-        spanPersonajeJugador.innerHTML = 'Katara'
-    } else if (inputAang.checked) {
-        spanPersonajeJugador.innerHTML = 'Aang'
-    } else if (inputToph.checked) {
-        spanPersonajeJugador.innerHTML = 'Toph'
+    if (personajeSeleccionado) {
+        spanPersonajeJugador.innerHTML = personajeSeleccionado;
     } else {
         // Mostrar un mensaje temporal en la pantalla si no se ha seleccionado un personaje
-       
-        let mensajeError = document.createElement("p")
-        mensajeError.innerHTML = 'Selecciona un personaje'
-        mensajeError.style.color = "red"
-
-        //let seccionSeleccionarPersonaje = document.getElementById("seleccionar-personaje")
-        sectionSeleccionarPersonaje.appendChild(mensajeError)
+        let mensajeError = document.createElement("p");
+        mensajeError.innerHTML = 'Selecciona un personaje';
+        mensajeError.style.color = "red";
+        sectionSeleccionarPersonaje.appendChild(mensajeError);
 
         // Eliminar el mensaje de error después de 2 segundos
-
         setTimeout(() => {
-            sectionSeleccionarPersonaje.removeChild(mensajeError)
-        }, 2000)
-        reiniciarJuego()
-        return
+            sectionSeleccionarPersonaje.removeChild(mensajeError);
+        }, 2000);
+
+        reiniciarJuego();
+        return;
     }
-    seleccinarPersonajeEnemigo()
+
+    seleccionarPersonajeEnemigo();
 }
 
-function seleccinarPersonajeEnemigo() { //esta función va dentro de seleccionarPersonajeJugador() al final
-    let personajeAleatorio = aleatorio(1, 4) //A continuación creamos las variables para cada personaje
-    let spanPersonajeEnemigo = document.getElementById('personaje-enemigo')
+function seleccionarPersonajeEnemigo() {
+    let personajeAleatorio = aleatorio(1, 4); // A continuación creamos las variables para cada personaje
+    let spanPersonajeEnemigo = document.getElementById('personaje-enemigo');
 
-    //comenzamos con la lógica
+    // Lógica para asignar el personaje enemigo
     if (personajeAleatorio == 1) {
-        spanPersonajeEnemigo.innerHTML = 'Zuko'
+        spanPersonajeEnemigo.innerHTML = 'Zuko';
     } else if (personajeAleatorio == 2) {
-        spanPersonajeEnemigo.innerHTML = 'Katara'
+        spanPersonajeEnemigo.innerHTML = 'Katara';
     } else if (personajeAleatorio == 3) {
-        spanPersonajeEnemigo.innerHTML = 'Aang'
+        spanPersonajeEnemigo.innerHTML = 'Aang';
     } else {
-        spanPersonajeEnemigo.innerHTML = 'Toph'
+        spanPersonajeEnemigo.innerHTML = 'Toph';
     }
 }
+
+function reiniciarJuego() {
+    location.reload();
+}
+
+function aleatorio(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
 
 function ataquePunio() { //Modificamos la variable global ataqueJugador
     ataqueJugador = 'Punio'
@@ -245,3 +254,4 @@ function aleatorio(min, max) {
 }
 
 window.addEventListener('load', iniciarJuego)
+
