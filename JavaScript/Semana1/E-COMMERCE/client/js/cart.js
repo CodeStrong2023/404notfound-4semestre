@@ -60,7 +60,8 @@ const displayCart = () => {
 
         const increse = modalBody.querySelector(".quantity-btn-increse");
         increse.addEventListener("click", () =>{
-            product. quanty++;
+            product.quanty++;
+            displayCart();
         });
       //delete
       const deleteProduct = modalBody.querySelector(".delete-product");
