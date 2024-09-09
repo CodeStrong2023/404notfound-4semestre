@@ -2,7 +2,7 @@ const modalContainer = document.getElementById("modal-overlay");
 const modalOverlay = document.getElementById("modal-container");
 const cartBtn = document.getElementById("cart-btn");
 
-const displayCart = () => {
+const displayCart = () => { 
     modalContainer.innerHTML = ""; // Limpia el html.
     // Se aplican estos estilos al display cuando se de click en el boton del carrito.
     modalContainer.style.display = "block";
@@ -50,40 +50,41 @@ const displayCart = () => {
         `;
         modalContainer.append(modalBody);
 
-        const decrese = modalBody.querySelector(".quantity-btn-decrese");
-        decrese.addEventListener( "click", () =>{
-        if (product.quanty == 1){
-        product.quanty--;
-        displayCart();
-        }
+         const decrease = modalBody.querySelector(".quantity-btn-decrease"); 
+        decrease.addEventListener("click", () => {
+            if (product.quanty > 1) { 
+                product.quanty--;
+                displayCart();
+            }
         });
 
-        const increse = modalBody.querySelector(".quantity-btn-increse");
-        increse.addEventListener("click", () =>{
+        const increase = modalBody.querySelector(".quantity-btn-increase");
+        increase.addEventListener("click", () => {
             product.quanty++;
             displayCart();
         });
-      //delete
-      const deleteProduct = modalBody.querySelector(".delete-product");
 
-      deleteProduct.addEventListener("click", () => {
-        deleteCartProduct(product.id);
-      });
+        // Delete
+        const deleteProduct = modalBody.querySelector(".delete-product");
+        deleteProduct.addEventListener("click", () => {
+            deleteCartProduct(product.id);
+        });
     });
-        // Modal footer
-        const total = cart.reduce((acc, el) => acc + el.price * el.quanty , 0);  
 
-        const modalFooter = document.createElement("div");
-        modalFooter.className = "modal-footer";
-        modalFooter.innerHTML = `
-        <div class="total-price">Total: ${total} </div>
-        `;
-        modalContainer.append(modalFooter);
+    // Modal footer
+    const total = cart.reduce((acc, el) => acc + el.price * el.quanty, 0);  
+
+    const modalFooter = document.createElement("div");
+    modalFooter.className = "modal-footer";
+    modalFooter.innerHTML = `
+        <div class="total-price">Total: ${total}</div> <!-- Corrección en la interpolación del total -->
+    `;
+    modalContainer.append(modalFooter);
 };
 
-cartBtn = document.addEventListener("click", displayCart);
+cartBtn.addEventListener("click", displayCart); 
 
 const deleteCartProduct = (id) => {
-  const foundId = cart.findIndex((element)=> element.id === id);
-  console.log(foundId);
+    const foundId = cart.findIndex((element) => element.id === id);
+    console.log(foundId);
 };
