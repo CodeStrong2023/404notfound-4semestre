@@ -60,14 +60,16 @@ const displayCart = () => {
 
         const increse = modalBody.querySelector(".quantity-btn-increse");
         increse.addEventListener("click", () =>{
-            product. quantY++;
+            product. quanty++;
         });
     });
-        // Modal footer.
+        // Modal footer
+        const total = cart.reduce((acc, el) => acc + el.price * el.quanty , 0);  
+
         const modalFooter = document.createElement("div");
         modalFooter.className = "modal-footer";
         modalFooter.innerHTML = `
-        <div class="total-price">Total: </div>
+        <div class="total-price">$ (total) </div>
         `;
         modalContainer.append(modalFooter);
 };
