@@ -52,7 +52,7 @@ const displayCart = () => {
 
         const decrese = modalBody.querySelector(".quantity-btn-decrese");
         decrese.addEventListener( "click", () =>{
-        if (product.quanty == 1);{
+        if (product.quanty == 1){
         product.quanty--;
         displayCart();
         }
