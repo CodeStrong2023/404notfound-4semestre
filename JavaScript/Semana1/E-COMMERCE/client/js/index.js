@@ -7,7 +7,7 @@ productos.forEach((product) =>{
     <img src="${product.img}">
     <h3>${product.productName}</h3>
     <p>${product.price}</p>
-    `;
+    `; 
     shopContent.append(content);
 
     const buyButton = document.createElement("button");
