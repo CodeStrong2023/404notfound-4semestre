@@ -147,21 +147,21 @@ function combate() {
 
     //COMBATE
     if (ataqueEnemigo == ataqueJugador) {
-        crearMensaje("EMPATE")
+        crearMensajeEmpate("EMPATE")
     } else if (ataqueJugador == 'Punio' && ataqueEnemigo == 'Barrida') {
-        crearMensaje("GANASTE")
+        crearMensajeGanaste("GANASTE")
         vidasEnemigo--
         spanVidasEnemigo.innerHTML = vidasEnemigo
     } else if (ataqueJugador == 'Patada' && ataqueEnemigo == 'Punio') {
-        crearMensaje("GANASTE")
+        crearMensajeGanaste("GANASTE")
         vidasEnemigo--
         spanVidasEnemigo.innerHTML = vidasEnemigo
     } else if (ataqueJugador == 'Barrida' && ataqueEnemigo == 'Patada') {
-        crearMensaje("GANASTE")
+        crearMensajeGanaste("GANASTE")
         vidasEnemigo--
         spanVidasEnemigo.innerHTML = vidasEnemigo
     } else {
-        crearMensaje("PERDISTE")
+        crearMensajePerdiste("PERDISTE")
         vidasJugador--
         spanVidasJugador.innerHTML = vidasJugador
     }
@@ -198,14 +198,42 @@ function crearMensajeFinal(resultado) {
     botonBarrida.disabled = true
 }
 
-function crearMensaje(resultado) {
+function crearMensajeGanaste(resultado) {
     let sectionMensaje = document.getElementById('mensajes')
     let parrafo = document.createElement('p')
 
-    parrafo.innerHTML = 'Tu personaje atacó con ' + ataqueJugador + ', el personaje del enemigo atacó con ' + ataqueEnemigo + ' ' + resultado
+    var mensaje_ganaste= 'Tu personaje atacó con ' + ataqueJugador + ', el personaje del enemigo atacó con ' + ataqueEnemigo + ' ' + resultado
+    parrafo.innerHTML =mensaje_ganaste
+    //se añade
+    parrafo.classList.add('mensaje-ganaste');
 
     sectionMensaje.appendChild(parrafo)
 }
+
+function crearMensajePerdiste(resultado) {
+    let sectionMensaje = document.getElementById('mensajes')
+    let parrafo = document.createElement('p')
+
+    var mensaje_perdiste= 'Tu personaje atacó con ' + ataqueJugador + ', el personaje del enemigo atacó con ' + ataqueEnemigo + ' ' + resultado
+    parrafo.innerHTML =mensaje_perdiste
+    //se añade
+    parrafo.classList.add('mensaje-perdiste');
+
+    sectionMensaje.appendChild(parrafo)
+}
+
+function crearMensajeEmpate(resultado) {
+    let sectionMensaje = document.getElementById('mensajes')
+    let parrafo = document.createElement('p')
+
+    var mensaje_empate= 'Tu personaje atacó con ' + ataqueJugador + ', el personaje del enemigo atacó con ' + ataqueEnemigo + ' ' + resultado
+    parrafo.innerHTML =mensaje_empate
+    //se añade
+    parrafo.classList.add('mensaje-empate');
+
+    sectionMensaje.appendChild(parrafo)
+}
+
 
 function reiniciarJuego(){
     location.reload()
@@ -254,4 +282,3 @@ function aleatorio(min, max) {
 }
 
 window.addEventListener('load', iniciarJuego)
-
