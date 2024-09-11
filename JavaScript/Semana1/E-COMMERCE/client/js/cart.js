@@ -1,6 +1,7 @@
 const modalContainer = document.getElementById("modal-container");
 const modalOverlay = document.getElementById("modal-overlay");
 
+
 const cartBtn = document.getElementById("cart-btn");
 const cartCounter = document.getElementById("cart-counter");
 
@@ -107,3 +108,5 @@ const displayCartCounter = () => {
         cartCounter.style.display = "none";
     }
 }
+
+
