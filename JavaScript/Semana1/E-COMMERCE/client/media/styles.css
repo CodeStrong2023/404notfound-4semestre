@@ -197,3 +197,22 @@
     margin-top: 20px;
     margin-bottom: 10px;
 }
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 16px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+.btn-primary:hover{
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+#button-checkout {
+    z-index: 10;
+}
