@@ -15,10 +15,10 @@ import lombok.ToString;
 @NoArgsConstructor // Nos agrega el conocido constructor vacío, sin argumentos.
 @AllArgsConstructor // Constructor con todos los argumentos.
 @ToString // Agrega el to string.
-public class Estudiante {
+public class Estudiante2022 {
     @Id // Agrega el orden del número de la llave primaria.
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Indica como se va a generar el valor de la llave primaria.
-    private Integer idEstudiante;
+    private Integer idestudiante;
     private String nombre;
     private String apellido;
     private String telefono;
