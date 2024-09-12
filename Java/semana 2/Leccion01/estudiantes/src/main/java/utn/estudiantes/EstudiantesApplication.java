@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import utn.estudiantes.modelo.Estudiante2022;
 import utn.estudiantes.servicio.EstudianteServicio;
 
 @SpringBootApplication  // Anotación para ejecutar
