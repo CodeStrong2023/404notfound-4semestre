@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d55bb775-0eda-42a8-9d96-47fcb807910e" name="Changes" comment="" />
+    <list default="true" id="d55bb775-0eda-42a8-9d96-47fcb807910e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Semana4/Clase 03/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Semana4/Clase 03/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,9 +23,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "matiasLandi",
+    "git-widget-placeholder": "celePulitta",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Matias/4-Semestre-Personal/Java/Lección01"
+    "last_opened_file_path": "C:/Users/CELESTE/Desktop/404notfound-4semestre/Java/semana 2"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
