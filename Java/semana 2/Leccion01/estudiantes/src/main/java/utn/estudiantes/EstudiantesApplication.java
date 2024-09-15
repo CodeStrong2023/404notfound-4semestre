@@ -56,12 +56,12 @@ public class EstudiantesApplication implements CommandLineRunner{
 		var opcion = Integer.parseInt(consola.nextLine());
 		var salir = false;
 		switch (opcion) {
-			case 1: // Listar
+			case 1 -> // Listar
 				logger.info(nl+"Listado de Estudiantes: " + nl);
 				List<Estudiantes2023> estudiantes = estudianteServicio.listarEstudiantes();
 				estudiantes.forEach((estudiante -> logger.info(estudiante.toString()+nl)));
 				break;
-			case 2: //buscar
+			case 2 -> //buscar
 				logger.info("Digite el id estudiante a buscar: ");
 				var idEstudiante = Integer.parseInt(consola.nextLine());
 				Estudiantes2023 estudiante = estudianteServicio.buscarEstudiantePorId(idEstudiante);
@@ -71,7 +71,7 @@ public class EstudiantesApplication implements CommandLineRunner{
 					logger.info("Estudiante no encontrado: " + estudiante + nl);
 				}
 				break;
-			case 3: //agregar 
+			case 3 -> //agregar
 				logger.info("Agregar estudiante: " + nl);
 				logger.info("Nombre: ");
 				var nombre = consola.nextLine();
@@ -88,7 +88,33 @@ public class EstudiantesApplication implements CommandLineRunner{
 				estudiante1.setEmail(email);
 				estudianteServicio.guardarEstudiante(estudiante1);
 				logger.info("Estudiante agregado: " + estudiante1 + nl);
-		               }
-	  }
+		}
+		case 4 -> { // Modificar estudiante
+			logger.info("Modificar estudiante: "+nl);
+			logger.info("Ingrese el id estudiante: ");
+			var idEstudiante = Integer.parseInt(consola.nextLine());
+			// Buscamos el estudiante a modificar
+			Estudiantes2022 estudiante = estudianteServicio.buscarEstudiantePorId(idEstudiante);
+			if(estudiante != null){
+				logger.info("Nombre: ");
+				var nombre = consola.nextLine();
+				logger.info("Apellido: ");
+				var apellido = consola.nextLine();
+				logger.info("Telefono: ");
+				var telefono = consola.nextLine();
+				logger.info("Email: ");
+				var email = consola.nextLine();
+				estudiante. setNombre(nombre);
+				estudiante.setApellido(apellido);
+				estudiante.setTelefono(telefono);
+				estudiante.setEmail(email);
+				estudianteServicio.generarEstudiante(estudiante);
+				logger.info("Estudiante modificado: "+estudiante+nl);
+			}
+		 	else
+				logger.info("Estudiante NO encontrado con el id: "+idEstudiante+nl);
+		}
+	  } // Fin switch
+	  return salir;
 
 }
