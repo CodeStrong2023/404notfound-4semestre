@@ -1,17 +1,16 @@
 package utn.estudiantes;
 
-import java.util.List;
-import java.util.Scanner;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import utn.estudiantes.modelo.Estudiantes2022;
+import utn.estudiantes.modelo.Estudiante2022;
 import utn.estudiantes.servicio.EstudianteServicio;
+
+import java.util.List;
+import java.util.Scanner;
 
 @SpringBootApplication
 public class EstudiantesApplication implements CommandLineRunner{
