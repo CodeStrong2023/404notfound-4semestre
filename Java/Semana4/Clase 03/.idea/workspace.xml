@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d55bb775-0eda-42a8-9d96-47fcb807910e" name="Changes" comment="" />
+    <list default="true" id="d55bb775-0eda-42a8-9d96-47fcb807910e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Semana3/Clase 03/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Semana3/Clase 03/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Clase 03.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,11 +30,25 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "celePulitta",
+    "git-widget-placeholder": "JaviMariñanco",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/CELESTE/Desktop/404notfound-4semestre/Java/Semana3/Clase 03"
+    "last_opened_file_path": "C:/Users/Javier/404notfound-4semestre/Java/semana 2/Leccion01",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -37,7 +57,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1725136243259</updated>
+      <workItem from="1726522305268" duration="18000" />
+      <workItem from="1726522602701" duration="102000" />
+      <workItem from="1726522796758" duration="123000" />
+      <workItem from="1726523114236" duration="183000" />
+      <workItem from="1726523397080" duration="51000" />
+      <workItem from="1726523790477" duration="548000" />
+      <workItem from="1726524394693" duration="128000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>
