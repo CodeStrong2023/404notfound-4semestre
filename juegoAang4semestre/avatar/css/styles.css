@@ -98,8 +98,7 @@ label {
 }
 
 #reglas-del-juego {
-    background-color: #00000071; 
-    padding: 20px; 
+    background-color: rgba(0, 0, 0, 0.781);
     border-radius: 10px; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin: 20px auto;
@@ -162,6 +161,106 @@ input[type="radio"] {
 label {
     display: block;
     text-align: center;
+}
+
+#seleccionar-ataque h2 {
+    background-color: #00000079; /* Color de fondo del título */
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center; /* Alineación centrada (opcional) */
+}
+
+#seleccionar-ataque p {
+background-color: #000000bb; /* Color de fondo de los párrafos */
+padding: 10px;
+border-radius: 5px;
+margin-bottom: 10px; /* Separación entre los párrafos */
+}
+
+#seleccionar-ataque button {
+margin: 5px;
+padding: 10px;
+border-radius: 5px;
+background-color: #000506; /* Color de fondo de los botones */
+border: none;
+cursor: pointer;
+}
+#seleccionar-ataque button:hover {
+    background-color: #87cefa; /* Color cuando pasas el mouse por encima */
+}
+
+.mensaje-ganaste {
+    font-size: 18px;
+    color: rgb(0, 135, 23);
+    font-weight: bold;
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.756);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+.mensaje-perdiste {
+    font-size: 18px;
+    color: rgb(135, 0, 0);
+    font-weight: bold;
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.781);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+.mensaje-empate {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.852);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.mensaje-batall {
+    font-size: 18px;
+    color: rgb(242, 242, 247);
+    font-weight: bold;
+    margin-top: 10px;
+    background-color: rgba(4, 4, 4, 0.781);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+
+#resultado-batalla {
+text-align: center;
+margin-top: 20px;
+}
+
+#mensaje-ataque {
+padding: 10px;
+border-radius: 5px;
+font-size: 18px;
+font-weight: bold;
+}
+
+/* Estilo para GANAR */
+.ganaste {
+background-color: #90ee90; /* Verde claro */
+color: #006400; /* Verde oscuro */
+}
+
+/* Estilo para EMPATAR */
+.empate {
+background-color: #ffffe0; /* Amarillo claro */
+color: #8b8000; /* Amarillo oscuro */
+}
+
+/* Estilo para PERDER */
+.perdiste {
+background-color: #ffcccb; /* Rojo claro */
+color: #b22222; /* Rojo oscuro */
 }
 
 

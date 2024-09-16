@@ -9,20 +9,28 @@
 </head>
 <body>
     <!--shop content-->
-    <div class="contenedor-productos">
-        <div class="productos" id="shopContent"></div>
+    <div class="card-products-containers">
+        <div class="card-products" id="shopContent"></div>
 
         </div>
     </div>
     <!--cart-btn-->
     <div class="cart-btn" id="cart-btn">🛒</div>
 
+    <!--cart counter-->
+    <span class="cart-counter" id="cart-counter">0</span>
+
     <!--modal-->
     <div class="modal-overlay" id="modal-overlay"></div>
-    <div class="modal-container" id="modal-container"></div>
+    <div class="modal-container" id="modal-container">
+        <button id="checkout-btn">PAGAR</button>
+        <div id="wallet_container"></div>
+    </div>
     
-    <script src="/E-COMMERCE/client/js/index.js"></script>
-    <script src="/E-COMMERCE/client/js/products.js"></script>
+    
+    <script src="../js/products.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/index.js"></script>
+    
 </body>
 </html>
-

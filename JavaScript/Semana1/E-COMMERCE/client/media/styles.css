@@ -33,16 +33,18 @@
     opacity: 0.7;
 }
 
-/*card button*/ 
-.card-btn {
+
+.cart-btn {
     position: fixed;
-    top: 90vh;
-    right: 40px;
+    right: 10px; 
     background-color: rgb(25, 25, 25);
     padding: 10px;
     border-radius: 50%;
-    height: 24px;
-    width: 24px;
+    height: 40px; 
+    width: 40px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: transform 0.2s ease-in-out;
 }
 
@@ -51,7 +53,23 @@
     opacity: 0.9;
 }
 
-/** modal **/
+.cart-counter {
+    display: flex!important;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+   
+    right: 7px;
+    color: #fff;
+    text-align: center;
+    background-color: #ed3434;
+    padding: 4px;
+    border-radius: 50%;
+    height: 24px; 
+    width: 24px; 
+    font-size: 12px; 
+}
+
 .modal-overlay {
     display: none;
     background-color: rgba(0, 0, 0, 0.5);
@@ -63,22 +81,23 @@
     z-index: 1;
 }
 
+
 .modal-container {
     display: none;
-    background-color: #ffff;
+    background-color: #ffffff;
     box-shadow: 0px 3px 6px #00000029;
-    padding: 40px;
-    position: absolute;
+    padding: 20px; 
+    position: fixed; 
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 500px;
-    width: 100%;
-    z-index: 1;
-    max-height: 80vh;
-    overflow-y: auto;
+    max-width: 80vw; 
+    width: 90%; 
+    max-height: 80vh; 
+    overflow-y: auto; 
+    z-index: 2; 
+    border-radius: 8px; 
 }
-
 .modal-container::-webkit-scrollbar {
     display: none;
 }
@@ -95,34 +114,47 @@
     text-align: center;
 }
 
-/** Modal Body **/
+
 .modal-body {
-    margin-bottom: 20px;
-    text-align: center;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
 }
 
 .product {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    margin-bottom: 20px;
+    justify-content: space-between;
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ddd;
 }
 
 .product-img {
     height: 80px;
-    margin-right: 20px;
     width: 80px;
+    margin-right: 20px;
 }
 
 .product-info {
+    display: flex;
+    flex-direction: column;
     flex: 1;
-    text-align: left;
-}
+    margin-right: 20px; }
 
 .product-info h4 {
-    margin-top: 35px;
+    margin: 0;
+    flex: 1;
 }
-
+.delete-product {
+    cursor: pointer;
+    color: red;
+    margin-left: 20px; 
+    font-size: 18px; 
+}
 .quantity {
     display: flex;
     align-items: center;
