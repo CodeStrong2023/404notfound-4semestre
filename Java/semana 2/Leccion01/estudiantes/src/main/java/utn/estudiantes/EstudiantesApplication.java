@@ -170,7 +170,7 @@ public class EstudiantesApplication implements CommandLineRunner {
 					estudianteServicio.eliminarEstudiante(estudiante);
 					logger.info("Estudiante eliminado correctamente: " + estudiante);
 				} else {
-					logger.info("No se pudo eliminar el estudiante");
+					logger.info("No se pudo eliminar el estudiante:"+idEstudiante+n1);
 				}
 			}
 
