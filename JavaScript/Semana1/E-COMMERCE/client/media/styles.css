@@ -214,3 +214,23 @@
     margin-top: 20px;
     margin-bottom: 10px;
 }
+
+
+#checkout-btn{
+    background-color: #1bcb7f; 
+    color: white;  
+    list-style: none; 
+    border: none;
+    padding: 0.4rem 3%;
+    border-radius: 4%;
+    font-weight: 600;
+    transition: all 0.9s;
+
+}
+
+#checkout-btn:hover{
+    
+     border-bottom:solid 2px #070303a8;
+     padding: 0.4rem 5%;
+
+}
