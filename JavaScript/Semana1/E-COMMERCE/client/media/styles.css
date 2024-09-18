@@ -10,24 +10,7 @@
     justify-content: space-around;
     flex-wrap: wrap;
 }
-.btn-primary{
-    background-color: #007bff;
-    border-color: #007bff;
-    color: white;
-    font-size: 14px;
-    font-weight: bold  ;
-    padding: 10px 20px;
-    text-transform: uppercase;
-    transition: background-color 0.2s ease-in-out;
-    cursor:pointer;
-}
-.btn-primary:hover{
-    background-color: #0069d9;
-    border-color: #0062cc;
-}
-#button-checkout{
-    z-index: 10;
-}
+
 .card-products img {
     margin-top: 40px;
     width: 250px;
@@ -230,4 +213,24 @@
     font-weight: bold;
     margin-top: 20px;
     margin-bottom: 10px;
+}
+
+
+#checkout-btn{
+    background-color: #1bcb7f; 
+    color: white;  
+    list-style: none; 
+    border: none;
+    padding: 0.4rem 3%;
+    border-radius: 4%;
+    font-weight: 600;
+    transition: all 0.9s;
+
+}
+
+#checkout-btn:hover{
+    
+     border-bottom:solid 2px #070303a8;
+     padding: 0.4rem 5%;
+
 }
