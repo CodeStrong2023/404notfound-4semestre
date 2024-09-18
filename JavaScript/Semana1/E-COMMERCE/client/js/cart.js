@@ -124,19 +124,19 @@ const displayCart = () => {
               } else if (product) {
                   deleteCartProduct(id);
               }
-              displayCart(); // Redibuja el carrito
-              displayCartCounter(); // Actualiza el contador
+              displayCart();
+              displayCartCounter(); 
           });
       });
 
         document.querySelectorAll(".quantity-btn-increase").forEach(button => {
           button.addEventListener("click", (e) => {
               const id = e.target.getAttribute("data-id");
-              const product = cart.find(product => product.id == id); // Asegúrate de comparar correctamente
+              const product = cart.find(product => product.id == id); 
               if (product) {
                   product.quanty++;
-                  displayCart(); // Redibuja el carrito
-                  displayCartCounter(); // Actualiza el contador
+                  displayCart(); 
+                  displayCartCounter();
               }
           });
       });
