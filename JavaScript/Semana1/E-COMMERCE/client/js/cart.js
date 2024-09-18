@@ -115,30 +115,31 @@ const displayCart = () => {
             renderComponent();
         };
 
-        // Event listeners for quantity buttons and delete buttons
-        document.querySelectorAll(".quantity-btn-increase").forEach(button => {
-            button.addEventListener("click", (e) => {
-                const id = e.target.getAttribute("data-id");
-                const product = cart.find(product => product.id === id);
-                product.quanty++;
-                displayCart();
-                displayCartCounter();
-            });
-        });
-
         document.querySelectorAll(".quantity-btn-decrease").forEach(button => {
-            button.addEventListener("click", (e) => {
-                const id = e.target.getAttribute("data-id");
-                const product = cart.find(product => product.id === id);
-                if (product.quanty > 1) {
-                    product.quanty--;
-                } else {
-                    deleteCartProduct(id);
-                }
-                displayCart();
-                displayCartCounter();
-            });
-        });
+          button.addEventListener("click", (e) => {
+              const id = e.target.getAttribute("data-id");
+              const product = cart.find(product => product.id == id);
+              if (product && product.quanty > 1) {
+                  product.quanty--;
+              } else if (product) {
+                  deleteCartProduct(id);
+              }
+              displayCart();
+              displayCartCounter(); 
+          });
+      });
+
+        document.querySelectorAll(".quantity-btn-increase").forEach(button => {
+          button.addEventListener("click", (e) => {
+              const id = e.target.getAttribute("data-id");
+              const product = cart.find(product => product.id == id); 
+              if (product) {
+                  product.quanty++;
+                  displayCart(); 
+                  displayCartCounter();
+              }
+          });
+      });
 
         document.querySelectorAll(".delete-product").forEach(button => {
             button.addEventListener("click", (e) => {
