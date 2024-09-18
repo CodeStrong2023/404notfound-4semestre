@@ -10,7 +10,24 @@
     justify-content: space-around;
     flex-wrap: wrap;
 }
-
+.btn-primary{
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+    font-size: 14px;
+    font-weight: bold  ;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease-in-out;
+    cursor:pointer;
+}
+.btn-primary:hover{
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+#button-checkout{
+    z-index: 10;
+}
 .card-products img {
     margin-top: 40px;
     width: 250px;

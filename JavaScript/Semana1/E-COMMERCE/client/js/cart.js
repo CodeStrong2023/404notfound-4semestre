@@ -1,7 +1,5 @@
 const modalContainer = document.getElementById("modal-container");
 const modalOverlay = document.getElementById("modal-overlay");
-
-
 const cartBtn = document.getElementById("cart-btn");
 const cartCounter = document.getElementById("cart-counter");
 
@@ -75,13 +73,62 @@ const displayCart = () => {
         });
 
         const total = cart.reduce((acc, el) => acc + el.price * el.quanty, 0);  
-
+        const nombre = cart.reduce((acc, el) =>  el.productName, 0);
         const modalFooter = document.createElement("div");
         modalFooter.className = "modal-footer";
         modalFooter.innerHTML = `
             <div class="total-price">Total: ${total}</div> 
+            <button class="btn-primary" id="checkout-btn">Pagar</button>
+            <div id="wallet_container"></div>
         `;
         modalContainer.append(modalFooter);
+
+        const mp = new MercadoPago("APP_USR-8cb2b19d-fc6c-49d1-91ef-adb375439f31", {
+            locale: "es-AR",
+        });
+        
+        document.getElementById("checkout-btn").addEventListener("click", async () => {
+            try {
+                const orderData = {
+                    title: nombre,
+                    quantity: 1,
+                    price: total,
+                };
+        
+                const response = await fetch("http://localhost:3000/create_preference", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(orderData),
+                });
+                const preference = await response.json();
+                createCheckoutButton(preference.id);
+        
+            } catch (error) {
+                alert("error");
+            }
+        });
+        
+        const createCheckoutButton = (preferenceId) => {
+            const bricksBuilder = mp.bricks();
+            const renderComponent = async () => {
+                if (window.checkoutButton) window.checkoutButton.unmount();
+                await bricksBuilder.create("wallet", "wallet_container", {
+                    initialization: {
+                        preferenceId: preferenceId,
+                    },
+                    customization: {
+                        texts: {
+                            valueProp: 'smart_option',
+                        },
+                    },
+                });
+            };
+        
+            renderComponent();
+        };
+
     } else {
         const modalText = document.createElement("h2");
         modalText.className = "modal-body";
@@ -108,6 +155,3 @@ const displayCartCounter = () => {
         cartCounter.style.display = "none";
     }
 }
-
-
-
