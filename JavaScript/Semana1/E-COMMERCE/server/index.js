@@ -17,39 +17,39 @@ app.get("/", (req, res) => {
 
 
 app.post("/create_preference", async (req, res) => {
-  try {
-    const { id, productName, price, quanty } = req.body;
-    
-    const preferenceData = {
-      items: [
-        {
-          id: id,
-          title: productName,  
-          unit_price: Number(price),  
-          quantity: Number(quanty),  
-          currency_id: "ARS",  
+    try {
+      const products = req.body;
+  
+      const items = products.map((product) => ({
+        id: product.id,
+        title: product.productName,
+        unit_price: Number(product.price),
+        quantity: Number(product.quanty),
+        currency_id: "ARS",
+      }));
+  
+      const preferenceData = {
+        items: items,
+        back_urls: {
+          success: "https://www.mercadopago.com.ar/",
+          failure: "https://www.mercadopago.com.ar/",
+          pending: "https://www.mercadopago.com.ar/",
         },
-      ],
-      back_urls: {
-        success: "https://www.mercadopago.com.ar/",
-        failure: "https://www.mercadopago.com.ar/",
-        pending: "https://www.mercadopago.com.ar/",
-      },
-      auto_return: "approved",
-    };
-
- 
-    const preference = new Preference(client);
-    const result = await preference.create({ body: preferenceData });
-
-    res.json({ id: result.id }); 
-  } catch (error) {
-    console.error("Error al crear la preferencia: ", error);
-    res.status(500).json({
-      error: "Error al crear la preferencia",
-    });
-  }
-});
+        auto_return: "approved",
+      };
+  
+      const preference = new Preference(client);
+      const result = await preference.create({ body: preferenceData });
+  
+      res.json({ id: result.id });
+    } catch (error) {
+      console.error("Error al crear la preferencia: ", error);
+      res.status(500).json({
+        error: "Error al crear la preferencia",
+      });
+    }
+  });
+  
 
 app.listen(port, () => {
   console.log(`El servidor está corriendo en el puerto ${port}`);
