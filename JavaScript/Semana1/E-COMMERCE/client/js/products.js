@@ -28,3 +28,5 @@ const productos = [
         img: "../media/mayonesa.png",  
     },
 ];
+
+

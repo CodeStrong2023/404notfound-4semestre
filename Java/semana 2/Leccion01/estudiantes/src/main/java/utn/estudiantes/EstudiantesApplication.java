@@ -6,142 +6,79 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import utn.estudiantes.modelo.Estudiante2022;
+import utn.estudiantes.modelo.Estudiantes2022;
 import utn.estudiantes.servicio.EstudianteServicio;
 
 import java.util.List;
 import java.util.Scanner;
 
-<<<<<<< HEAD
 @SpringBootApplication  // Anotación para ejecutar
 public class EstudiantesApplication implements CommandLineRunner { // Ejecutamos la app por consola e implementamos el método.
-=======
-@SpringBootApplication
-public class EstudiantesApplication implements CommandLineRunner {
->>>>>>> ramaPrueba
 
 	@Autowired
 	private EstudianteServicio estudianteServicio;
 	private static final Logger logger = LoggerFactory.getLogger(EstudiantesApplication.class);
 
-	String nl = System.lineSeparator();
+	String nl = System.lineSeparator(); // Salto de línea.
 
 	public static void main(String[] args) {
 		logger.info("Iniciando la aplicación...");
+		// Levantar la fábrica de Spring
 		SpringApplication.run(EstudiantesApplication.class, args);
-		logger.info("Aplicación finalizada");
+		logger.info("Aplicación Finalizada!");
 	}
-
 	@Override
 	public void run(String... args) throws Exception {
-<<<<<<< HEAD
-		logger.info(nl+"Ejecutando el método run de Spring..."+nl);
+		logger.info(nl+"Ejecutando el método run de Spring...");
 		var salir = false;
 		var consola = new Scanner(System.in);
-		while(!salir!){
+		while(!salir){
 			mostrarMenu();
 			salir = ejecutarOpciones(consola);
 			logger.info(nl);
-		}//Fin del ciclo while
+		} // Fin ciclo while
 	}
 
 	private void mostrarMenu(){
-		logger.info(nl);
+		//logger.info(nl);
 		logger.info("""
-				******* Sistema de Estudiantes *******
-				1. Listar Estudiantes
-				2. Buscar Estudiante
-				3. Agregar Estudiante
-				4. Modificar Estudiante
-				5. Eliminar Estudiante
-				6. Salir 
-				Elija una opción:""");
-	}
-
-	private boolean ejecutarOpciones(Scanner consola){
-		var opcion = Integer.parseInt(consola.nextLine());
-		var salir = false;
-		switch (opcion){
-			case 1 -> {
-				logger.info(nl+"Listado de Estudiantes: "+nl);
-				List<Estudiante2022> estudiantes = estudianteServicio.listarEstudiantes();
-				estudiantes.forEach((estudiante -> logger.info(estudiante.toString()+nl)));
-			}
-		}//Fin swich
-		return salir;
-=======
-		logger.info(nl + "Ejecutando el metodo run en Spring" + nl);
-		var salir = false;
-		var consola = new Scanner(System.in);
-		while (!salir) {
-			mostrarMenu();
-			salir = ejecutarOpciones(consola);
-			logger.info(nl);
-		}
-	}
-
-	private void mostrarMenu() {
-		logger.info(nl);
-		logger.info("""
-				******* Sistema de Estudiantes *******
-				1.Listar estudiante
-				2.Buscar estudiante
-				3.Agregar estudiante
-				4. Modificar estudiante
-				5. Eliminar estudiante
-				6. Salir
-				Elija una opcion>""");
+					****** Sistema de Estudiantes ******
+					1. Listar Estudiantes
+					2. Buscar Estudiante
+					3. Agregar Estudiante
+					4. Modificar Estudiante
+					5. Eliminar Estudiante
+					6. Salir
+					Elija una opción:""");
 	}
 
 	private boolean ejecutarOpciones(Scanner consola) {
-		var opcion = Integer.parseInt(consola.nextLine());
 		var salir = false;
-		switch (opcion) {
-			case 1 -> {// Listar
-				logger.info(nl + "Listado de Estudiantes: " + nl);
-				List<Estudiante2022> estudiantes = estudianteServicio.listarEstudiantes();
-				estudiantes.forEach((estudiante -> logger.info(estudiante.toString() + nl)));
-				break;
-			}
+		try {
+			var opcion = Integer.parseInt(consola.nextLine());
 
-			case 2 -> { //buscar
-				logger.info("Digite el id estudiante a buscar: ");
-				var idEstudiante = Integer.parseInt(consola.nextLine());
-				Estudiante2022 estudiante = estudianteServicio.buscarEstudiantePorId(idEstudiante);
-				if (estudiante != null) {
-					logger.info("Estudiante encontrado: " + estudiante + nl);
-				} else {
-					logger.info("Estudiante no encontrado: " + estudiante + nl);
+			switch (opcion) {
+				case 1 -> {
+					// Listar estudiantes
+					logger.info(nl + "Listado de Estudiantes: ");
+					List<Estudiantes2022> estudiantes = estudianteServicio.listarEstudiantes();
+					estudiantes.forEach(estudiante -> logger.info(estudiante.toString()));
 				}
-				break;
-			}
-
-			case 3 -> {//agregar
-				logger.info("Agregar estudiante: " + nl);
-				logger.info("Nombre: ");
-				var nombre = consola.nextLine();
-				logger.info("Apellido: ");
-				var apellido = consola.nextLine();
-				logger.info("Telefono: ");
-				var telefono = consola.nextLine();
-				logger.info("Email: ");
-				var email = consola.nextLine();
-				var estudiante1 = new Estudiante2022();
-				estudiante1.setNombre(nombre);
-				estudiante1.setApellido(apellido);
-				estudiante1.setTelefono(telefono);
-				estudiante1.setEmail(email);
-				estudianteServicio.guardarEstudiante(estudiante1);
-				logger.info("Estudiante agregado: " + estudiante1 + nl);
-			}
-
-			case 4 -> { // Modificar estudiante
-				logger.info("Modificar estudiante: " + nl);
-				logger.info("Ingrese el id estudiante: ");
-				var idEstudiante = Integer.parseInt(consola.nextLine());
-				// Buscamos el estudiante a modificar
-				Estudiante2022 estudiante = estudianteServicio.buscarEstudiantePorId(idEstudiante);
-				if (estudiante != null) {
+				case 2 -> { // Buscar estudiante por id
+					try {
+						logger.info("Digite el ID del estudiante a buscar: ");
+						var idEstudiante = Integer.parseInt(consola.nextLine());
+						Estudiantes2022 estudiante = estudianteServicio.buscarEstudiantePorId(idEstudiante);
+						if (estudiante != null)
+							logger.info("Estudiante encontrado: " + estudiante + nl);
+						else
+							logger.info("Estudiante NO encontrado: " + idEstudiante + nl);
+					} catch (Exception e) {
+						logger.error("ERROR: ID no válido. Ingrese el ID del estudiante." +nl);
+					}
+				}
+				case 3 -> { // Agregar estudiante
+					logger.info("Agregar estudiante: " + nl);
 					logger.info("Nombre: ");
 					var nombre = consola.nextLine();
 					logger.info("Apellido: ");
@@ -150,36 +87,70 @@ public class EstudiantesApplication implements CommandLineRunner {
 					var telefono = consola.nextLine();
 					logger.info("Email: ");
 					var email = consola.nextLine();
+					// Crear el objeto estudiante sin el Id
+					var estudiante = new Estudiantes2022();
 					estudiante.setNombre(nombre);
 					estudiante.setApellido(apellido);
 					estudiante.setTelefono(telefono);
 					estudiante.setEmail(email);
 					estudianteServicio.guardarEstudiante(estudiante);
-					logger.info("Estudiante modificado: " + estudiante + nl);
-				} else
-					logger.info("Estudiante NO encontrado con el id: " + idEstudiante + nl);
-			}
-
-			case 5 -> {
-				logger.info("Eliminar Estudiante" + nl);
-				logger.info("Ingrese el id del estudiante a eliminar: ");
-				var idEstudiante = Integer.parseInt(consola.nextLine());
-				var estudiante = estudianteServicio.buscarEstudiantePorId(idEstudiante);
-
-				if (estudiante != null) {
-					estudianteServicio.eliminarEstudiante(estudiante);
-					logger.info("Estudiante eliminado correctamente: " + estudiante);
-				} else {
-					logger.info("No se pudo eliminar el estudiante:"+idEstudiante+n1);
+					logger.info("Estudiante agregado: " + estudiante + nl);
 				}
-			}
+				case 4 -> { // Modificar estudiante
+					try {
+						logger.info("Modificar estudiante: " + nl);
+						logger.info("Ingrese el ID estudiante: ");
+						var idEstudiante = Integer.parseInt(consola.nextLine());
+						// Buscamos el estudiante a modificar
+						Estudiantes2022 estudiante = estudianteServicio.buscarEstudiantePorId(idEstudiante);
+						if (estudiante != null) {
+							logger.info("Nombre: ");
+							var nombre = consola.nextLine();
+							logger.info("Apellido: ");
+							var apellido = consola.nextLine();
+							logger.info("Telefono: ");
+							var telefono = consola.nextLine();
+							logger.info("Email: ");
+							var email = consola.nextLine();
+							estudiante.setNombre(nombre);
+							estudiante.setApellido(apellido);
+							estudiante.setTelefono(telefono);
+							estudiante.setEmail(email);
+							estudianteServicio.guardarEstudiante(estudiante);
+							logger.info("Estudiante modificado: " + estudiante + nl);
+						} else
+							logger.info("Estudiante NO encontrado con el id: " + idEstudiante + nl);
 
-			case 6 -> {
-				logger.info("Saliendo...");
-				return true;
+					} catch (Exception e) {
+						logger.error("ERROR: ID no válido. Debe ingrese el ID del estudiante."+nl);
+					}
+				}
+				case 5 -> { // Eliminar estudiantes
+					try {
+						logger.info("Eliminar estudiante: " + nl);
+						logger.info("Digite el ID del estudiante: ");
+						var idEstudiante = Integer.parseInt(consola.nextLine());
+						// Buscamos el id estudiante a eliminar
+						var estudiante = estudianteServicio.buscarEstudiantePorId(idEstudiante);
+						if (estudiante != null) {
+							estudianteServicio.eliminarEstudiante(estudiante);
+							logger.info("Estudiante eliminado: " + estudiante + nl);
+						} else
+							logger.info("Estudiante NO encontrado con id: " + idEstudiante + nl);
+
+					} catch (Exception e) {
+						logger.error("ERROR: ID no válido. Debe ingrese el ID del estudiante."+nl);
+					}
+				}
+				case 6 -> { // Salir
+					logger.info("Hasta pronto!" + nl + nl);
+					salir = true;
+				}
+				default -> logger.info("Opción no reconocida: " + opcion + nl);
 			}
+		} catch (Exception e) {
+			logger.error("ERROR: Opción no válida. Debe ingresar un número."+nl);
 		}
-		return false;
->>>>>>> ramaPrueba
-	}
-}
+		return salir;
+	} // Fin método ejecutarOpciones
+} // Fin clase EstudiantesApplication
