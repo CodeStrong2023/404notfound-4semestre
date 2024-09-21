@@ -1,14 +1,16 @@
 import e from "express";
 import express from "express";
-
+import tareasRoutes from "./router/tareas.routes.js"
 const app = express();
-
+//Middlewars
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.get("/", (req, res) => res.json({messaje: "Bienbenidos a mi proyecto"}));
+app.use("/tareas", tareasRoutes);
 
+//manejando errores
 app.use((req, res, next) => {
     res.status(500).json({
         status: 'error',
