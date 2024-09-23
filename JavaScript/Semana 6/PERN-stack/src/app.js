@@ -8,7 +8,7 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.get("/", (req, res) => res.json({messaje: "Bienbenidos a mi proyecto"}));
+app.get("/", (req, res) => res.json({messaje: "Bienvenidos a mi proyecto"}));
 app.use('/api', tareasRoutes);
 app.use('/api', authRoutes)
 
