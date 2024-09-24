@@ -55,3 +55,65 @@ Aquí subiremos las clases, ejercicios y tareas en equipo del 4to Semestre de la
     <td>10340</td>
   </tr>
 </table>
+
+# Scrum Master Semanales
+<table>
+  <tr>
+    <th>SM</th>
+    <th>Semana</th>
+  </tr>
+  <tr>
+    <td>Enzo Astorga</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>Debora Celeste Pulitta</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>Diego Rafael Llanos</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>Ignacio José Rocha</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>Matías Landi</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+
+  </tr>
+</table>
+</table>
