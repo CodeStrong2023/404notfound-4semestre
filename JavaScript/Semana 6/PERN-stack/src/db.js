@@ -5,6 +5,7 @@ export const pool = new pg.Pool ({
     host: "localhost",
     user: "admin",
     password: "admin",
+    database: "PERN",
 
 });
 
