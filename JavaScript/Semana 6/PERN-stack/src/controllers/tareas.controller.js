@@ -4,18 +4,23 @@ export const listarTareas = (req, res) => res.send("obteniendo tareas");
 
 export const listarTarea = (req, res) => res.send("obteniendo tarea unica");
 
-export const crearTarea = (req, res) => 
+export const crearTarea = (req, res, next) => 
 {
     const {titulo,descripcion} = req.body;
    
 
-    try {const resultado = pool.query("INSERT INTO tareas (titulo, descripcion)VALUES (1$, 2$)"[titulo,descripcion]);
+    try {
+        throw new Error ('algo salio mal');
+        const resultado = pool.query("INSERT INTO tareas (titulo, descripcion)VALUES (1$, 2$)"[titulo,descripcion]);
         console.log(raws);
-         res.send("creando tarea");
+        res.send("creando tarea");
     } catch (error) {
-        console.log("Algo salio mal")
-    }
-
+        if (error.code === '23505'){
+            return res.send('ya existe una tarea con ese titulo');
+        }
+        console.log(error);
+        next(error);
+    } 
 }
 
 export const actualizarTarea = (req, res) => res.send("actualizando tarea unica");
