@@ -9,5 +9,6 @@ public class TiendaLibrosApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TiendaLibrosApplication.class, args);
 	}
-
+	ConfigurationApplicationContext contextoSpring=
+	new SpringApplicationBuilder(TiendaLibrosApplication.class);
 }
