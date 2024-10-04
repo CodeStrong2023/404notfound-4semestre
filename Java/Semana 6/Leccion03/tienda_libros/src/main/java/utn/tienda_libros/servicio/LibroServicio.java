@@ -1,13 +1,17 @@
 package utn.tienda_libros.servicio;
 
-import org.springframeword.stereotype.Service;
+import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+import utn.tienda_libros.modelo.Libro;
+import utn.tienda_libros.repositorio.LibroRepositorio;
+
+import java.util.List;
 
 @Service
-
 public class LibroServicio implements ILibroServicio {
 
     @Autowired
-    private LibroRepsitorio libroRepsitorio;
+    private LibroRepositorio libroRepositorio;
 
     @Override
     public List<Libro> listarLibros() {
@@ -16,8 +20,7 @@ public class LibroServicio implements ILibroServicio {
 
     @Override
     public Libro buscarLibroPorId(Integer idLibro) {
-        Libro libro = libroRepsitorio.findById(idLibro).orElse(null);
-        return libro;
+        return libroRepositorio.findById(idLibro).orElse(null);
     }
 
     @Override
@@ -30,6 +33,3 @@ public class LibroServicio implements ILibroServicio {
         libroRepositorio.delete(libro);
     }
 }
-
-
-
