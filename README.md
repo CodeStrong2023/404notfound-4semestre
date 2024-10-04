@@ -35,10 +35,6 @@ Aquí subiremos las clases, ejercicios y tareas en equipo del 4to Semestre de la
     <td>10494</td>
   </tr>
   <tr>
-    <td>Guillermo Giannone</td>
-    <td>10386</td>
-  </tr>
-  <tr>
     <td>Javier Mariñanco</td>
     <td>10433</td>
   </tr>
@@ -83,12 +79,12 @@ Aquí subiremos las clases, ejercicios y tareas en equipo del 4to Semestre de la
     <td>5</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
+    <td>Gonzalo Balmaceda</td>
+    <td>6</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
+    <td>Enzo Astorga</td>
+    <td>7</td>
   </tr>
   <tr>
     <td></td>
