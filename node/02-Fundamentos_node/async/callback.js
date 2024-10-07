@@ -2,15 +2,15 @@
 function Hola(nombre, miCallback){
     setTimeout(function() {
         console.log('Hola'+nombre);
-        miCallback();
+        miCallback(nombre);
     }, 1000);
 }
 
 function adios(nombre, otroCallback) {
     setTimeout(function(){
-        console.log('Adios', nombre);
+        console.log('Adios' + nombre);
         otroCallback();
-    }, 1000)
+    }, 1500)
 }
 
 console.log('Iniciando el proceso...');
