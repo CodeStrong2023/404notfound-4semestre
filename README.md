@@ -87,12 +87,12 @@ Aquí subiremos las clases, ejercicios y tareas en equipo del 4to Semestre de la
     <td>7</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
+    <td>Maximiliano Robilotta</td>
+    <td>8</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
+    <td>Javier Mariñanco</td>
+    <td>9</td>
   </tr>
   <tr>
     <td></td>
