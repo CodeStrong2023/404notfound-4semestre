@@ -1,5 +1,5 @@
 body {
-    font-family: 'Papyrus', sans-serif;
+    font-family: 'Codex', sans-serif;
     background-image: url('fondo.jpg');
     background-size: cover;
     background-position: center;
@@ -231,6 +231,27 @@ cursor: pointer;
     text-align: center;
 }
 
+.ganaste {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.852);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.perdiste {
+    font-size: 18px;
+    color: rgb(135, 0, 0);
+    font-weight: bold;
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.781);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
 
 
 #resultado-batalla {

@@ -172,10 +172,11 @@ function combate() {
 function revisarVidas(){
     if(vidasEnemigo == 0){
         //Ganamos
-        crearMensajeFinal("FELICITACIONES!!! HAS GANADO 🤩🥳🎉")
+        crearMensajeFinal("")
+        usuarioGano()
     } else if(vidasJugador == 0){
         //Perdimos
-        crearMensajeFinal("QUE PENA, HAS PERDIDO 😢😭😭😭")
+        crearMensajeFinal("")
         usuarioPerdio();
     }
 }
@@ -275,7 +276,42 @@ function usuarioPerdio() {
     document.body.appendChild(popup);
 }
 
+function usuarioGano() {
+    var popup = document.createElement('div');
+    popup.style.position = 'fixed';
+    popup.style.top = '50%';
+    popup.style.left = '50%';
+    popup.style.transform = 'translate(-50%, -50%)';
+    popup.style.backgroundColor = 'green';
+    popup.style.color = 'black';
+    popup.style.padding = '20px';
+    popup.style.borderRadius = '10px';
+    popup.style.boxShadow = '0px 0px 10px rgba(0, 0, 0, 0.5)';
+    popup.style.zIndex = '1000';
+    popup.textContent = 'FELICITACIONES HAS GANADO!!';
 
+
+    var botonCerrar = document.createElement('button');
+    botonCerrar.textContent = 'x';
+    botonCerrar.style.marginTop = '10px';
+    botonCerrar.style.padding = '10px';
+    botonCerrar.style.border = 'none';
+    botonCerrar.style.borderRadius = '5px';
+    botonCerrar.style.cursor = 'pointer';
+    botonCerrar.style.backgroundColor = 'black';
+    botonCerrar.style.color = 'white';
+
+
+    botonCerrar.addEventListener('click', function() {
+        document.body.removeChild(popup);
+    });
+
+
+    popup.appendChild(botonCerrar);
+
+
+    document.body.appendChild(popup);
+}
 
 function aleatorio(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
