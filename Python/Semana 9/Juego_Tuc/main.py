@@ -20,3 +20,15 @@ def mostrar_pantalla_inicio(screen):
             if event.Type.QUIT:
                 pygame.quit()
                 sys.exit()
+        # Actualizar pantalla
+        screen.blit(imagen_inicio, (0, 0))
+        pygame.display.flip()
+
+    def main():
+        pygame.init()
+        screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+        pygame.display.set_caption('Amenaza Fantasma')
+
+        # Cargar los recursos del juego
+
+
