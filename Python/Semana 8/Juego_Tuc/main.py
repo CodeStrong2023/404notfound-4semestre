@@ -32,3 +32,6 @@ def mostrar_pantalla_inicio(screen):
         # Cargar los recursos del juego
         icon=pygame.image.load(f'{ASSETS_PATH}/images/fondo001.jfif')
         pygame.display.set_icon(icon)
+
+        fondo = pygame.image.load(FONDO1_PATH)
+        fondo = pygame.transform.scale(fondo1 (SCREEN_WIDTH, SCREEN_HEIGHT))
