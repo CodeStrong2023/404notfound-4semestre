@@ -30,5 +30,5 @@ def mostrar_pantalla_inicio(screen):
         pygame.display.set_caption('Amenaza Fantasma')
 
         # Cargar los recursos del juego
-
-
+        icon=pygame.image.load(f'{ASSETS_PATH}/images/fondo001.jfif')
+        pygame.display.set_icon(icon)
