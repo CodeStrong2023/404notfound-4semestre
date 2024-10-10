@@ -22,4 +22,25 @@ public class Libro {
     String autor;
     Double precio;
     Integer existencias;
+
+    // Getters
+    public Integer getIdLibro() {
+        return idLibro;
+    }
+
+    public String getNombreLibro() {
+        return nombreLibro;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public int getExistencias() {
+        return existencias;
+    }
 }

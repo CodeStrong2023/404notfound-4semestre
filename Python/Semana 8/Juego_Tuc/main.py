@@ -33,5 +33,11 @@ def mostrar_pantalla_inicio(screen):
         icon=pygame.image.load(f'{ASSETS_PATH}/images/fondo001.jfif')
         pygame.display.set_icon(icon)
 
-        fondo = pygame.image.load(FONDO1_PATH)
-        fondo = pygame.transform.scale(fondo1 (SCREEN_WIDTH, SCREEN_HEIGHT))
+        fondo = pygame.image.load(f'{ASSES_PATH}/images/fond3.jpg')
+        fondo = pygame.transform.scale(fondo, (SCREEN_WIDTH, SCREEN_HEIGHT))
+
+        estrella = pygame.image.load(ESTRELLA_PATH)
+        estrella = pygame.transform.scale(fondo1, (SCREEN_WIDTH, SCREEN_HEIGHT))
+
+        fondo1 = pygame.image.load(FONDO1_PATH)
+        fondo1 = pygame.transform.scale(fondo1 (SCREEN_WIDTH, SCREEN_HEIGHT))
