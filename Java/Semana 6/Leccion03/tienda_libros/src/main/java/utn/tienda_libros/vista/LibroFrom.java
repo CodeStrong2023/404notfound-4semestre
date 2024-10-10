@@ -5,9 +5,8 @@ import org.springframework.stereotype.Component;
 import utn.tienda_libros.servicio.LibroServicio;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 @Component
 public class LibroFrom extends JFrame {
@@ -20,6 +19,8 @@ public class LibroFrom extends JFrame {
     private JTextField existenciasTextTextField;
     private JButton agregarButton;
     private JTable tablaLibros;
+    private JButton modificarButton;
+    private JButton eliminarButton;
     private DefaultTableModel tablaModeloLibros;
 
     @Autowired
