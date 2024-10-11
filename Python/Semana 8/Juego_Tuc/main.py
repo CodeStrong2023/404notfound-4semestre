@@ -1,7 +1,7 @@
 import sys
-
 import pygame
 
+from constantes import SCREEN_WIDTH, SCREEN_HEIGTH ,ASSETS_PATH, IMPERIAL_MARCH_PATH,START_IMAGE_PATH, ESTRELLA_PATH, FONDO1_PATH
 
 def mostrar_pantalla_inicio(screen):
     # Cargar y mostrar la imágen de inicio
@@ -40,4 +40,19 @@ def mostrar_pantalla_inicio(screen):
         estrella = pygame.transform.scale(fondo1, (SCREEN_WIDTH, SCREEN_HEIGHT))
 
         fondo1 = pygame.image.load(FONDO1_PATH)
-        fondo1 = pygame.transform.scale(fondo1 (SCREEN_WIDTH, SCREEN_HEIGHT))
+        fondo1 = pygame.transform.scale(fondo1( SCREEN_WIDTH, SCREEN_HEIGHT))
+
+        sonido_laser = pygame.mixer.Sound(f' {ASSETS_PATH}/sound/explocion.mp3')
+
+        personaje = Personaje (SCREEN_WIDTH //2, SCREEN_HEIGTH // 2)
+        Enemigos = []
+        explociones = []
+        puntos = 0
+        nivel = 1
+
+        Clock = pygame.time.Clock()
+        running = True
+
+        #icinializar el fondo actual con el fondo original
+
+        fondo_actual = fondo
