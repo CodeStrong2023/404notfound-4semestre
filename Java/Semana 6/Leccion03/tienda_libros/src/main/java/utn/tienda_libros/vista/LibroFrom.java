@@ -3,6 +3,7 @@ package utn.tienda_libros.vista;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import utn.tienda_libros.servicio.LibroServicio;
+import utn.tienda_libros.modelo.Libro;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -43,10 +44,29 @@ public class LibroFrom extends JFrame {
         setLocation(x, y);
     }
 
-    private void agregarLibro(){
+    private void agregarLibro() {
         //Leer los valores del formulario
         if (libroTexto.getText().equals("")) {
-            mostrarMensaje("Ingresar el nombre del libro")
+            mostrarMensaje("Ingresar el nombre del libro");
+            libroTexto.requestFocusInWindow();
+            return;
+        }
+
+        var nombreLibro = libroTexto.getText();
+        var autor = autorTexto.getText();
+        var precio = Double.parseDouble(precioTexto.getText());
+        var existencias = Integer.parseInt(existenciasTexto.getText());
+
+        // Creamos el objeto libro.
+        var libro = new Libro();
+        libro.setNombreLibro(nombreLibro);
+        libro.setAutor(autor);
+        libro.setPrecio(precio);
+        libro.setExistencias(existencias);
+    }
+
+    private void mostrarMensaje(String mensaje) {
+        JOptionPane.showMessageDialog(this, mensaje);
     }
 
     private void createUIComponents() {
