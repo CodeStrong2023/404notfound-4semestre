@@ -18,11 +18,20 @@ function adios(nombre, otroCallback) {
     }, 1500)
 }
 
+
 // --Proceso Principal
 console.log('Iniciando el proceso...');
 Hola('Carlos',function() {
-    adios('Carlos', function(){
-        console.log('Terminando el proceso...');
-    })
+    hablar(function(){
+        hablar(function() {
+            hablar(function() {
+                hablar(function() {
+                    adios(nombre, function(){
+                        console.log('Terminando el proceso...');
+                    });
+                });
+            });
+        });
+    });
 });
 
