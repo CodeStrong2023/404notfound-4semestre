@@ -19,3 +19,8 @@ Hola('Carlos',function() {
         console.log('Terminando el proceso...');
     })
 });
+
+//hola('Carlos', function(){});
+//adios('Carlos', function(){});
+
+

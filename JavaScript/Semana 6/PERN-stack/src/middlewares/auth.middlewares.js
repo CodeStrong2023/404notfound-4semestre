@@ -1,4 +1,5 @@
 import jwt, { decode } from "jsonwebtoken";
+
 export const isAuth = (req, res, next) => {
     const token = req.cookies.token;
 
