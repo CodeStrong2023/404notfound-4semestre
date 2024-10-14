@@ -173,4 +173,4 @@ function reiniciarJuego() {
 // Popup de derrota
 function usuarioPerdio() {
     var popup = document.createElement('div');
-    popup.style.position
+    popup.style.position 
