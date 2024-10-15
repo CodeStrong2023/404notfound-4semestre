@@ -14,7 +14,7 @@ export const signup = async(req, res)=> {
         console.log(hashedPassword)
 
         const result = await pool.query("INSERT INTO usuarios (name, email,password) VALUES ($1, $2, $3) Returning *", [name, email, hashedPassword])
-        const token = await createAccessToken([id: result.rows[0].id]);
+        const token = await createAccessToken({id: result.rows[0].id});
         console.log(result);
         res.cookie("token", token, {
             httpOnly: true,

@@ -1,4 +1,4 @@
-
+// Callbacks
 function Hola(nombre, miCallback){
     setTimeout(function() {
         console.log('Hola'+nombre);
@@ -19,3 +19,8 @@ Hola('Carlos',function() {
         console.log('Terminando el proceso...');
     })
 });
+
+//hola('Carlos', function(){});
+//adios('Carlos', function(){});
+
+
