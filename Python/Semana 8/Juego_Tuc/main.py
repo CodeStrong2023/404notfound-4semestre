@@ -56,3 +56,14 @@ def mostrar_pantalla_inicio(screen):
         #icinializar el fondo actual con el fondo original
 
         fondo_actual = fondo
+
+        while running:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+
+
+
+    
+
