@@ -13,22 +13,19 @@ import java.awt.*;
 public class LibroFrom extends JFrame {
     private LibroServicio libroServicio;
     private JLabel panel;
-    private JLabel Libro;
-    private JTextField librotextTextField;
-    private JTextField precioTextoTextField;
-    private JLabel Existencias;
-    private JTextField existenciasTextTextField;
-    private JButton agregarButton;
     private JTable tablaLibros;
-    private JButton modificarButton;
-    private JButton eliminarButton;
+    private JTextField libroTexto;
+    private JTextField autorTexto;
+    private JTextField precioTexto;
+    private JTextField existenciasTexto;
+    private JButton agregarButton;
     private DefaultTableModel tablaModeloLibros;
 
     @Autowired
     public LibroFrom(LibroServicio libroServicio) {
         this.libroServicio = libroServicio;
         iniciarForma();
-        agregarButton.addActionListener(e -> agregarLibro);
+        agregarButton.addActionListener(e -> agregarLibro());
     }
 
     private void iniciarForma() {
@@ -58,11 +55,22 @@ public class LibroFrom extends JFrame {
         var existencias = Integer.parseInt(existenciasTexto.getText());
 
         // Creamos el objeto libro.
-        var libro = new Libro();
-        libro.setNombreLibro(nombreLibro);
-        libro.setAutor(autor);
-        libro.setPrecio(precio);
-        libro.setExistencias(existencias);
+        var libro = new Libro(null, nombreLibro, autor, precio, existencias);
+        //libro.setNombreLibro(nombreLibro);
+        //libro.setAutor(autor);
+        //libro.setPrecio(precio);
+        //libro.setExistencias(existencias);
+        this.libroServicio.guardarLibro(libro);
+        mostrarMensaje("Se agregó el libro...");
+        limpiarFormulario();
+        listarLibros();
+    }
+
+    private void limpiarFormulario(){
+        libroTexto.setText("");
+        autorTexto.setText("");
+        precioTexto.setText("");
+        existenciasTexto.setText("");
     }
 
     private void mostrarMensaje(String mensaje) {
