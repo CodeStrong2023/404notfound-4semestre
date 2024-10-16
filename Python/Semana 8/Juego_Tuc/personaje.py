@@ -45,3 +45,14 @@ class Enemigo :
 
     def dibujar(self, screen):
         screen.blit(self.image, self.rect.topleft)
+
+class Laser:
+    def __init__(self, x, y):
+        self.image = pygame.image.load(f'{ASSETS_PATH}/images/lase1.png')
+        self.rect = self.image.get_rect(center=(x, y))
+
+    def mover(self):
+        self.rect.y -=10 #velocidad del laser
+
+    def dibujar (self, screen):
+        screen.blit(self.image, self.rect.topleft)
