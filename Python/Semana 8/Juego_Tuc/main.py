@@ -77,6 +77,10 @@ def mostrar_pantalla_inicio(screen):
 
             personaje.mover(dx, dy)
 
+            if keys[pygame.K_SPACE]:
+                personaje.lanzar_laser()
+                sonido_laser.play()
+
 
 
     
