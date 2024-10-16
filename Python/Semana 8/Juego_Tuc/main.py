@@ -63,6 +63,20 @@ def mostrar_pantalla_inicio(screen):
                     pygame.quit()
                     sys.exit()
 
+            keys = pygame.key.get_pressed()
+            dx, dy = 0, 0
+
+            if keys[pygame.K_LEFT]: # tecla hacia la derecha
+                dx = -5
+            if keys[pygame.K_RIGHT]: # tecla hacia la izquierda
+                dx = 5
+            if keys[pygame.K_UP]: # tecla hacia arriba
+                dy = -5
+            if keys[pygame.K_DOWN]: # tecla hacia abajo
+                dy = 5
+
+            personaje.mover(dx, dy)
+
 
 
     
