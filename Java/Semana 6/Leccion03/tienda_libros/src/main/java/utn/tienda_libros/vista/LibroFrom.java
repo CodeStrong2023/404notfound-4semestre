@@ -26,6 +26,14 @@ public class LibroFrom extends JFrame {
         this.libroServicio = libroServicio;
         iniciarForma();
         agregarButton.addActionListener(e -> agregarLibro());
+
+        tablaLibros.addActionListener(new mouseAdapter(){
+            @Override
+            public void mouseClicked(MouseEvent e){
+                super.mouseClicked(e);
+                cargarLibroSeleccionado();
+            }
+        })
     }
 
     private void iniciarForma() {
@@ -65,6 +73,11 @@ public class LibroFrom extends JFrame {
         limpiarFormulario();
         listarLibros();
     }
+
+        private void cargarLibroSeleccionado(){
+            //Los indices de las columnas inician en 0
+            
+        }
 
     private void limpiarFormulario(){
         libroTexto.setText("");
