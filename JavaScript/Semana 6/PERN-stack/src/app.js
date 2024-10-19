@@ -2,9 +2,12 @@ import e from "express";
 import express from "express";
 import tareasRoutes from "./router/tareas.routes.js"
 import authRoutes from "./router/auth.routes.js"
+import cookiePacser from "cookie-parser";
+
 const app = express();
 //Middlewars
 app.use(morgan("dev"));
+app.use(cookiePacser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
