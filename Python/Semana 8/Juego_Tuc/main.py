@@ -94,6 +94,9 @@ for enemigo in enemigos:
             sonido.explosion.play()
             puntos += 10
             break
+        if enemigo.rect.colliderect(personaje.shape)
+            if not personaje.recibir_daño():
+                running = False
 
     
 
