@@ -82,6 +82,18 @@ def mostrar_pantalla_inicio(screen):
                 sonido_laser.play()
 
 
+for enemigo in enemigos:
+    enemigo.mover()
+    if enemigo.rect.top > SCREEN_HEIGHT:
+        enemigo.remove(enemigo)
+    for laser in personaje.lasers:
+        if enemigo.rect.colliderect(laser.rect):
+            explosiones.append(Explosion(enemigo.rect.centerx, enemigo.rect.centery))
+            enemigo.remove(enemigo)
+            personaje.lasers.remove(laser)
+            sonido.explosion.play()
+            puntos += 10
+            break
 
     
 
