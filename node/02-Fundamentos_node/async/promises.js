@@ -1,8 +1,11 @@
-function Hola(nombre, miCallback){
-    setTimeout(function() {
-        console.log('Hola'+nombre);
-        miCallback(nombre);
-    }, 1000);
+function Hola(nombre){
+    return new Promise(function(resolve, reject){
+        setTimeout(function() {
+            console.log('Hola'+nombre);
+            resolve(nombre);
+        }, 1000);
+    })
+   
 }
 
 function hablar(callbackHablar){
@@ -18,3 +21,8 @@ function adios(nombre, otroCallback) {
         otroCallback();
     }, 1500)
 }
+
+console.log('Iniciando el proceso...');
+Hola("ariel").then((nombre)=>{
+    console.log("Terminando proceso");
+})
