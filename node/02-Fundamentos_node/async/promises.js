@@ -1,3 +1,5 @@
+
+
 function Hola(nombre) {
     return new Promise((resolve, reject) => {
         setTimeout(function() {
@@ -5,6 +7,7 @@ function Hola(nombre) {
             resolve(nombre); // Resolvemos con el nombre para pasarlo a las siguientes promesas
         }, 1000);
     });
+
 }
 
 function hablar(nombre) {
@@ -15,6 +18,8 @@ function hablar(nombre) {
         }, 1000);
     });
 }
+
+
 
 function adios(nombre) {
     return new Promise((resolve, reject) => {
@@ -40,3 +45,4 @@ Hola('Ariel')
         console.log('Ha habido un error');
         console.log(error);
     });
+
