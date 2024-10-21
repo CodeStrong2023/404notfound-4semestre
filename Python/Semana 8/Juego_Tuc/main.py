@@ -145,4 +145,24 @@ for enemigo in enemigos:
         #mostrar freeze
         screen.blit(texto_game_over,(SCREEN_WIDTH//2-texto_game_over.get_width()//2,SCREEN_HEIGTH//2-texto_game_over.get_height()//2))
         pygame.display.flip()
-        pygame.time.wait(2000)#muestra la frase de game over por dos segundos
+        pygame.time.wait(2000) # muestra la frase de game over por dos segundos
+
+        # Desaparecer GAME OVER y mostrar mensaje final
+        for alpha in range (255, -1, -5):
+            screen.fill((0, 0, 0))
+            texto_game_over.set_alpha(alpha)
+            screen.blit(texto_game_over, (SCREEN_WIDTH // 2 - texto_game_over.get_width() // 2, SCREEN_HEIGTH // 2))
+            pygame.display.flip()
+            pygame.time.delay(10)
+
+        # Muestra mensaje final
+        screen.fill((0, 0, 0))
+        screen.blit(texto_game_over, (SCREEN_WIDTH // 2 - texto_mensaje_final.get_width() // 2, SCREEN_HEIGTH // 2))
+        pygame.display.flip()
+        pygame.time.wait(5000)  # Muestra mensaje final durante 5 segundos
+        
+        pygame.quit()
+        sys.exit()
+
+if __name__ == '__main__':
+    main()
