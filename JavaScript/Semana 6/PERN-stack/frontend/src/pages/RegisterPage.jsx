@@ -1,11 +1,17 @@
 import { Button, Card, Input } from "../components/ui/Button";
 import { useForm } from "react-hook-form";
+import { useState } from "axios"
 function RegisterPage() {
 
   const {register, handleSubmit, formState: {errors}} = useForm();
 
-  const onSubmit = handleSubmit((data) => {
-    console.log(data);
+  const onSubmit = handleSubmit(async (data) => {
+    
+    const res= await axios.post("http://localhost:3000/api/signup", data,{
+      withCredentials: true,
+    });
+      console.log(res);
+    
   });
 
   return (
