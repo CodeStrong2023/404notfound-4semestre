@@ -1,46 +1,48 @@
 package utn.tienda_libros.vista;
 
+import org.hibernate.mapping.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import utn.tienda_libros.servicio.LibroServicio;
 import utn.tienda_libros.modelo.Libro;
+import utn.tienda_libros.servicio.LibroServicio;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 @Component
 public class LibroFrom extends JFrame {
     private LibroServicio libroServicio;
-    private JLabel panel;
+    private JPanel panel;
     private JTable tablaLibros;
-    private JTextField librotextTextField;
     private JTextField idTexto;
+    private DefaultTableModel tablaModeloLibros;
     private JTextField libroTexto;
     private JTextField autorTexto;
-    private JTextField getPrecioTexto;
+    private JTextField precioTexto;
     private JTextField existenciasTexto;
     private JButton agregarButton;
     private JButton modificarButton;
     private JButton eliminarButton;
-    private JTextField precioTexto;
-    private DefaultTableModel tablaModeloLibros;
 
     @Autowired
     public LibroFrom(LibroServicio libroServicio) {
         this.libroServicio = libroServicio;
+        createUIComponents(); // Mueve la creación de UI aquí
         iniciarForma();
-        agregarButton.addActionListener(e -> agregarLibro());
 
+        agregarButton.addActionListener(e -> agregarLibro());
         tablaLibros.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
                 cargarLibroSeleccionado();
             }
         });
-
         modificarButton.addActionListener(e -> modificarLibro());
         eliminarButton.addActionListener(e -> eliminarLibro());
     }
@@ -50,16 +52,18 @@ public class LibroFrom extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
         setSize(900, 700);
+        // Para obtener las dimensiones de la ventana
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Dimension tamanioPantalla = toolkit.getScreenSize();
-        int x = (tamanioPantalla.width - getWidth()) / 2;
-        int y = (tamanioPantalla.height - getHeight()) / 2;
+        int x = (tamanioPantalla.width - getWidth() / 2);
+        int y = (tamanioPantalla.height - getHeight() / 2);
         setLocation(x, y);
     }
 
     private void agregarLibro() {
+        // Leer los valores del formulario
         if (libroTexto.getText().equals("")) {
-            mostrarMensaje("Ingresar el nombre del libro");
+            mostrarMensaje("Ingresa el nombre del libro");
             libroTexto.requestFocusInWindow();
             return;
         }
@@ -69,12 +73,15 @@ public class LibroFrom extends JFrame {
         var precio = Double.parseDouble(precioTexto.getText());
         var existencias = Integer.parseInt(existenciasTexto.getText());
 
+        // Creamos el objeto libro
         var libro = new Libro(null, nombreLibro, autor, precio, existencias);
         this.libroServicio.guardarLibro(libro);
-        mostrarMensaje("Se agregó el libro...");
+
+        mostrarMensaje("Se agregó el libro");
         limpiarFormulario();
-        listarLibros();
+        listarLibros(); // Asegúrate de que esto esté aquí
     }
+
 
     private void cargarLibroSeleccionado() {
         var renglon = tablaLibros.getSelectedRow();
@@ -92,16 +99,17 @@ public class LibroFrom extends JFrame {
         }
     }
 
+
     private void modificarLibro() {
         if (idTexto.getText().equals("")) {
             mostrarMensaje("Debes seleccionar un registro en la tabla");
         } else {
             if (libroTexto.getText().equals("")) {
-                mostrarMensaje("Digite el nombre del libro...");
+                mostrarMensaje("Digite el nombre del libro");
                 libroTexto.requestFocusInWindow();
                 return;
             }
-
+            // Llenamos el objeto libro a actualizar
             int idLibro = Integer.parseInt(idTexto.getText());
             var nombreLibro = libroTexto.getText();
             var autor = autorTexto.getText();
@@ -109,25 +117,9 @@ public class LibroFrom extends JFrame {
             var existencias = Integer.parseInt(existenciasTexto.getText());
             var libro = new Libro(idLibro, nombreLibro, autor, precio, existencias);
             libroServicio.guardarLibro(libro);
-            mostrarMensaje("Se modificó el libro...");
+            mostrarMensaje("Se modificó el libro");
             limpiarFormulario();
             listarLibros();
-        }
-    }
-
-    private void eliminarLibro(){
-        var renglon = tablaLibros.getSelectedRow();
-        if(renglon != -1){
-            String idLibro = tablaLibros.getModel().getValueAt(renglon, 0).toString();
-            var libro = new Libro();
-            libro.setIdLibro(Integer.parseInt(idLibro));
-            libroServicio.eliminarLibro(libro);
-            mostrarMensaje("Libro "+idLibro+" ELIMINADO");
-            limpiarFormulario();
-            listarLibros();
-        }
-        else {
-            mostrarMensaje("No se ha seleccionado ningún libro de la tabla a eliminar");
         }
     }
 
@@ -142,28 +134,50 @@ public class LibroFrom extends JFrame {
         JOptionPane.showMessageDialog(this, mensaje);
     }
 
+    private void eliminarLibro() {
+        var renglon = tablaLibros.getSelectedRow();
+        if (renglon != -1) {
+            String idLibro = tablaLibros.getModel().getValueAt(renglon, 0).toString();
+            var libro = new Libro();
+            libro.setIdLibro(Integer.parseInt(idLibro));
+            libroServicio.eliminarLibro(libro);
+            mostrarMensaje("Libro " + idLibro + " ELIMINADO");
+            limpiarFormulario();
+            listarLibros();
+        } else {
+            mostrarMensaje("No se ha seleccionado ningún libro de la tabla para eliminar");
+        }
+    }
+
     private void createUIComponents() {
+        // Inicializar idTexto
         idTexto = new JTextField("");
         idTexto.setVisible(false);
-        this.tablaModeloLibros = new DefaultTableModel(0, 5){
+
+        // Inicializar tablaModeloLibros
+        this.tablaModeloLibros = new DefaultTableModel(0, 5) {
             @Override
-            public boolean isCellEditable(int row, int column){
+            public boolean isCellEditable(int row, int column) {
                 return false;
             }
         };
         String[] cabecera = {"Id", "Libro", "Autor", "Precio", "Existencias"};
         this.tablaModeloLibros.setColumnIdentifiers(cabecera);
-        //Instanciar el objeto JTable
+        // Instanciar el objeto de JTable
         this.tablaLibros = new JTable(tablaModeloLibros);
-        // Evitamos que se seleccionen varios registros
+        // Evitamos que se puedan seleccionar varios registros
         tablaLibros.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         listarLibros();
     }
 
     private void listarLibros() {
+        // Limpiar la tabla
         tablaModeloLibros.setRowCount(0);
+        // Obtener los libros de la base de datos
         var libros = libroServicio.listarLibros();
-        libros.forEach((libro) -> {
+        // Iteramos cada libro
+        libros.forEach(libro -> {
+            // Creamos cada registro para agregarlos a la tabla
             Object[] renglonLibro = {
                     libro.getIdLibro(),
                     libro.getNombreLibro(),
