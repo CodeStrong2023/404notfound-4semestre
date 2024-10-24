@@ -1,3 +1,4 @@
-import {Button} from "./Button";
-import {Input} from "./input";
-import {Card} from "./Card";
+export {Button} from "./Button";
+export {Input} from "./input";
+export {Card} from "./Card";
+export {Label} from "./Label"
