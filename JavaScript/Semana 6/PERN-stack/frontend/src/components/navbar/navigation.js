@@ -1,8 +1,5 @@
-export const navigation=[
-    {
-    name:"Home",
-    path:"/"
-},
+
+export const PublicRoutes = [
 {
     name:"about",
     path:"/about"},
@@ -11,7 +8,15 @@ export const navigation=[
     path:"/login"},
 {
     name:"registro",
-    path:"/register"},
+    path:"/register"}
+]
+
+export const PrivateRoutes =[
+    {
+    name:"Home",
+    path:"/"
+},
+
 {
     name:"perfil",
     path:"/perfil"},
