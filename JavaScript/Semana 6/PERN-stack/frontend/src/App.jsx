@@ -1,4 +1,5 @@
 import { Route, Routes,} from "react-router-dom"
+import {Container} from ".Components/ui/Container"
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import LoginPage from './pages/LoginPage'
@@ -7,10 +8,13 @@ import ProfilePage from './pages/ProfilePage'
 import TareasPage from './pages/TareasPage'
 import TareaFormPage from './pages/TareaFormPage'
 import NotFound from "./pages/NotFound"
-
+import Navbar from "./components/navbar/NavBar"
 function App() {
   return (
-    <Routes>
+    <>
+   <Navbar/>
+   <Container className="p-5">
+   <Routes>
       <Route path='/' element={<HomePage/>} />
       <Route path='/about' element={<AboutPage/>} />
       <Route path='/login' element={<LoginPage/>} />
@@ -21,6 +25,11 @@ function App() {
       <Route path='/tareas/editar/:id' element={<TareaFormPage/>} />
       <Route path='*' element={<NotFound/>}/>
     </Routes>
+   </Container>
+
+    </>
+
+    
   )
 }
 
