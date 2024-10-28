@@ -5,7 +5,7 @@ import { useAuth } from "../../context/AuthContext";
 
 function Navbar() {
     const location=useLocation();
-    const {useAuth} = useAuth();
+    const {isAuth, signout} = useAuth();
     return (
         <nav className="bg-zinc-950">
             <Container className="flex justify-between items-center py-3">
@@ -14,15 +14,33 @@ function Navbar() {
             </Link>
             <ul className="flex gap-x-2">
 
-                {
-                    isAuth ? PrivateRoutes.map(({name, path}) => () 
-                }
-                {navigation.map((name,path)=>(
-                    <li className={`text-slate-300 ${location.pathname===path && "bg-sky-500 px-3 py-1"}}`} key={name}>
+                { isAuth ?
+                    <>
+                     PrivateRoutes.map(({name, path}) => (
+                        <Li 
+                        className = {`text-slate-300 ${
+                            location.pathname === path && "bg-sky-500 py-1"
+                        }}'}
+                        key={name}
+                        >
                         <Link to={path}>{name}</Link>
-                    </li>
-                ))}
-            </ul>
+                        </li> 
+                    ))}
+                        <li onClick={() => signout()}>salir</li>
+                        </>
+                    ) : ( 
+                     PublicRouters.map(({name, path}) =>(
+                        <li
+                        className={'text-slate-300 ${
+                            location.pathname === path && "bg-sky-500 px-3 py-1"
+                        }}`}
+                        key={name}
+                    >
+                        <Link to={path}>{namr}</Link>
+                    </Li>
+                    ))
+                }
+                </ul>
             </Container>
         </nav>  
     )
