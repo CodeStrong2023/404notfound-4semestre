@@ -29,7 +29,7 @@ function TareaFormPage() {
       <Card>
         {
           postError.map((error) => (
-            <p className="bg-red-500 text-white p-2">{error}</p>
+            <p className="bg-red-500 text-white p-2" key= {i}>{error}</p>
           ))
         }
         <h2 className="text-3xl font-bolt my-4 ">Formulario de Tareas</h2>
