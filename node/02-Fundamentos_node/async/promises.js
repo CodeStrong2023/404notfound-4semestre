@@ -5,7 +5,6 @@ async function Hola(nombre) {
             resolve(nombre); // Resolvemos con el nombre para pasarlo a las siguientes promesas
         }, 1000);
     });
-
 }
 
 async function hablar(nombre) {
@@ -17,42 +16,31 @@ async function hablar(nombre) {
     });
 }
 
-
-
 async function adios(nombre) {
     return new Promise((resolve, reject) => {
         setTimeout(function() {
             console.log('Adios ' + nombre);
-            //resolve(); // No es necesario pasar el nombre en la última función
-            reject('Hay un error')
+            // Puedes descomentar la línea resolve si quieres que no dé error.
+            resolve(); // No es necesario pasar el nombre en la última función
+            // reject('Hay un error') // Comentar o eliminar esta línea si no quieres generar un error
         }, 1000);
     });
 }
 
-// Llamamos a la función
-console.log('Iniciando el proceso...');
-Hola('Ariel')
-    .then(hablar)
-    .then(hablar)
-    .then(hablar)
-    .then(adios)
-    .then((nombre) => {
+// Llamamos a la función usando async/await
+async function main() {
+    try {
+        console.log('Iniciando el proceso...');
+        let nombre = await Hola('Ariel');
+        await hablar(nombre);
+        await hablar(nombre);
+        await hablar(nombre);
+        await adios(nombre);
         console.log('Terminando el proceso');
-    })
-    .catch((error) => {
+    } catch (error) {
         console.log('Ha habido un error');
         console.log(error);
-    });
+    }
+}
 
-
-async function main() {
-    let nombre = await hola('Sebas');
-    await hablar();
-    await hablar();
-    await hablar();
-    await adios(nombre);
-    
-    
-} 
-
-main ();
+main();
