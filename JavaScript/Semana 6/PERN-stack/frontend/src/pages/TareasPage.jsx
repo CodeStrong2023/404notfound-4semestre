@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { obtenerTareasResquest } from '../api/tareas.api';
-import {Card} from "../components/ui";
+import { listarTareasResquest } from '../api/tareas.api';
+import {CardTareas} from "../components/tareas/CardTareas";
 
 function TareasPage() {
   const [tareas, setTareas] = useState([])
@@ -9,14 +9,16 @@ function TareasPage() {
     listarTareasResquest()
       .then((response) => {
        setTareas(response.data)
-      console.log(response.data) 
+     
       });
+    }, []);
+
   return (
-    <div>
+    <div className='grid grid-cols-3 gap-2'>
       {
-        tareas.map((tarea, i) => (
+        tareas.map((tarea) => (
           <Card key = {tarea.id}>
-            <h3>{tarea.titulo}</h3>
+            <h1 className='text-2xl font-bold'>{tarea.titulo}</h1>
             <p>{tarea.descripcion}</p>
           </Card>
         ))

@@ -16,22 +16,21 @@ import Navbar from "./components/navbar/NavBar"
 function App() {
 
   const {isAuth} = useAuth();
-  console.log(isAuth);
+  
 
   return (
     <>
    <Navbar/>
    <Container className="p-5">
    <Routes>
-      <Route>
-        <Route element= {ProtectedRoute isAllwed={!isAuth} redirectTo="tareas"/>}>
+        <Route element= {<ProtectedRoute isAllwed={!isAuth} redirectTo="tareas"/>}>
         <Route path='/' element={<HomePage/>} />
         <Route path='/about' element={<AboutPage/>} />
         <Route path='/login' element={<LoginPage/>} />
         <Route path='/register' element={<RegisterPage/>} />
       </Route>
 
-      <Route element= {ProtectedRoute isAllwed={isAuth}redirectTo="/login"/>}>
+      <Route element= {<ProtectedRoute isAllwed={isAuth}redirectTo="/login"/>}>
         <Route path='/perfil' element={<ProfilePage/>} />
         <Route path='/tareas' element={<TareasPage/>} />
         <Route path='/tareas/crear' element={<TareaFormPage/>} />
