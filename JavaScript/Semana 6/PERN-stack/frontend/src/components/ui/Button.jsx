@@ -1,11 +1,11 @@
 
 
-export function Button({children}){
+export function Button({children, className, ...props}){
     return (
-        <button className= "relative inline-flex items-center gap-1.5 rounded-md bg-blue-500 px-3 py-1.5 text-sm font-semibold
+        <button className= {`relative inline-flex items-center gap-1.5 rounded-md bg-blue-500 px-3 py-1.5 text-sm font-semibold
         text-white shadow-sm hover:bg-blue-400 focus-visible:outline focus-visible:outline-2Button
-        focus-visible:outline-offset-2 focus-visible:outline-blue-500 disabled:opacity-50 disabled:cursor-not-allowe">{children}</button>
+        focus-visible:outline-offset-2 focus-visible:outline-blue-500 disabled:opacity-50 disabled:cursor-not-allowe ${className}`} {...props}>{children}</button>
         )
     }
 
-expor default Button
+export default Button

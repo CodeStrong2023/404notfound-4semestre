@@ -95,12 +95,12 @@ Aquí subiremos las clases, ejercicios y tareas en equipo del 4to Semestre de la
     <td>9</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
+    <td>Débora Celeste Pulitta</td>
+    <td>10</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
+    <td>Maximiliano Robilotta</td>
+    <td>11</td>
   </tr>
   <tr>
     <td></td>
