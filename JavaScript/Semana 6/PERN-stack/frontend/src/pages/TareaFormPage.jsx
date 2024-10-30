@@ -1,8 +1,8 @@
 import {Card, Input, Textarea,Label, Button} from ".../components/ui";
 import {useForm} from "react-hook-form";
 import {useNavigate} from "react-router-dom";
-import { crearTareaRequest } from "../api/tareas.api";
 import { useState } from "react";
+import { useTareas } from "../context/TareasContext";
 
 function TareaFormPage() {
 
@@ -10,17 +10,14 @@ function TareaFormPage() {
     register, 
     handleSubmit, 
     formState: {errors},
-  } = useFrom();
+  } = useForm();
   const navigate = useNavigate();
   const [postError, setPostError] = useState([]);
-
-  const onSubmit = hamdleSubmit(async (data) => {
-    try{
-      const res = await crearTareaRequest(data);
+  const {crearTarea} =useTareas();
+  const onSubmit = handleSubmit(async (data) => {
+    const res = await crearTarea(data);
+    if(res){
       navigate("/tareas");
-      
-    }catch (error) {
-      setPostError(error.response.data.message);
     }
   });
   
