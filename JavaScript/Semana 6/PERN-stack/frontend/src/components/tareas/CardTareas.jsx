@@ -1,7 +1,8 @@
 import {Card, Button} from "../ui";
-import { eliminarTareaRequest } from "../../api/tareas.api";
+import { useTareas } from "../../context/TareasContext";
 
 export function CardTareas({tarea}){
+    const { elminarTarea } = useTareas();
     return (
         <Card key = {tarea.id} className="py-4 px-7">
         <div className="flex justify-between items-center">
@@ -13,8 +14,7 @@ export function CardTareas({tarea}){
             <Button className="bg-red-500 hover:bg-red-600"
             onClick={async () => {
                 if (window.confirm("Estas seguro de eliminar esta tarea?")){
-                const res = await eliminarTareaRequest(tarea.id)
-                console.log(res);
+                    await elminarTarea(tarea.id);
                 }
             }}
             >Eliminar</Button>

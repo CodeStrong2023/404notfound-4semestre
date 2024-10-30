@@ -1,9 +1,14 @@
 import { Route, Routes,} from "react-router-dom"
 import {Container} from ".Components/ui/Container"
+
 import { ProtectedRoute } from "./components/ProtectedRoute"
+
 import { useAuth } from "./context/AuthContext"
+import {TareasProvider} from "./context/TareasContext";
 
 import HomePage from './pages/HomePage'
+
+import { Routes, Route, Outlet } from "react-router-dom";
 
 import AboutPage from './pages/AboutPage'
 import LoginPage from './pages/LoginPage'
@@ -32,9 +37,17 @@ function App() {
 
       <Route element= {<ProtectedRoute isAllwed={isAuth}redirectTo="/login"/>}>
         <Route path='/perfil' element={<ProfilePage/>} />
-        <Route path='/tareas' element={<TareasPage/>} />
-        <Route path='/tareas/crear' element={<TareaFormPage/>} />
-        <Route path='/tareas/editar/:id' element={<TareaFormPage/>} />
+        
+        <Route element={
+          <TareasProvider>
+          <Outlet/>
+        </TareasProvider>
+        }
+        >
+          <Route path='/tareas' element={<TareasPage/>} />
+          <Route path='/tareas/crear' element={<TareaFormPage/>} />
+          <Route path='/tareas/editar/:id' element={<TareaFormPage/>} />
+        </Route>
       </Route>
       <Route path='*' element={<NotFound/>}/>
     </Routes>
