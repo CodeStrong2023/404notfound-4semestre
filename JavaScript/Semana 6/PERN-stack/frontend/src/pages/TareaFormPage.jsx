@@ -1,7 +1,7 @@
 import {Card, Input, Textarea,Label, Button} from ".../components/ui";
 import {useForm} from "react-hook-form";
 import {useNavigate, useParams} from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useTareas } from "../context/TareasContext";
 
 function TareaFormPage() {
@@ -15,10 +15,14 @@ function TareaFormPage() {
   const params = useParams();
   console.log(params);
   const navigate = useNavigate();
-  const {crearTarea, cargarTarea, errors:tareasErrors} =useTareas();
+  const {crearTarea, cargarTarea, editarTarea, errors:tareasErrors} =useTareas();
   const onSubmit = handleSubmit(async (data) => {
-    const res = await crearTarea(data);
-    if(res){
+    let tarea;
+    if (!params.id){
+      tarea = await crearTarea(data);
+      navigate("/tareas");
+    } else{
+      tarea = await editarTarea(params.id, data);
       navigate("/tareas");
     }
   });
