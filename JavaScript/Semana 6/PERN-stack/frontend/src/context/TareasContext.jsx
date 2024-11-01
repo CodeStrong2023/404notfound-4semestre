@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import { crearTareaRequest, eliminarTareaRequest, listarTareasResquest, crearTareaRequest } from "../api/tareas.api";
+import { crearTareaRequest, eliminarTareaRequest, listarTareasRequest, listarTareaRequest } from "../api/tareas.api";
 import { response } from "express";
 
 const TareasContext = createContext();
@@ -21,6 +21,11 @@ export const TareasProvider = ({ children }) => {
         const res = await listarTareasResquest()
         setTareas(res.data);
         };
+
+    const cargarTarea = async (id, tarea) =>{
+        const res = await listarTareasRequest(id, tarea);
+        return res.data;
+    };
 
     const crearTarea = async (tarea) => {
         try{
@@ -49,6 +54,8 @@ export const TareasProvider = ({ children }) => {
             cargarTareas,
             eliminarTarea,
             crearTarea,
+            cargarTarea,
+            errors,
         }}>
             {children}
         </TareasContext.Provider>

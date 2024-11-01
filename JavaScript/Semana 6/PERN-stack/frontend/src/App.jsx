@@ -18,9 +18,15 @@ import TareasPage from './pages/TareasPage'
 import TareaFormPage from './pages/TareaFormPage'
 import NotFound from "./pages/NotFound"
 import Navbar from "./components/navbar/NavBar"
+
 function App() {
 
-  const {isAuth} = useAuth();
+  const {isAuth, loading} = useAuth();
+  console.log(loading);
+
+  if (loading){
+    return <h1>Cargando...</h1>;
+  }
   
 
   return (
@@ -41,12 +47,12 @@ function App() {
         <Route element={
           <TareasProvider>
           <Outlet/>
-        </TareasProvider>
+          </TareasProvider>
         }
         >
           <Route path='/tareas' element={<TareasPage/>} />
           <Route path='/tareas/crear' element={<TareaFormPage/>} />
-          <Route path='/tareas/editar/:id' element={<TareaFormPage/>} />
+          <Route path='/tareas/:id/editar' element={<TareaFormPage/>} />
         </Route>
       </Route>
       <Route path='*' element={<NotFound/>}/>
