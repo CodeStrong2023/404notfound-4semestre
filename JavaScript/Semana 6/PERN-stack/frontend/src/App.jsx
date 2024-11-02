@@ -24,10 +24,7 @@ function App() {
   const {isAuth, loading} = useAuth();
 
   if (loading){
-    setTimeout(() => {
       return <h1>Loading...</h1>
-    }
-    ,1000);
   }
   
 
