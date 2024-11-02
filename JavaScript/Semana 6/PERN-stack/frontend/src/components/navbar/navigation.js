@@ -26,8 +26,5 @@ export const PrivateRoutes =[
 {
     name:"Crear Tarea",
     path:"/tareas/crear"},
-{
-    name:"Editar Tarea",
-    path:"/tareas/editar/:id"},
 
 ]

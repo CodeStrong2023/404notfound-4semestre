@@ -1,28 +1,26 @@
-import React, { useEffect, useState } from 'react';
-import { obtenerTareasResquest } from '../api/tareas.api';
-import {Card} from "../components/ui";
+import React, { useEffect } from 'react';
+import {CardTareas} from "../components/tareas/CardTareas";
+import { useTareas, cargarTareas } from "../context/TareasContext";
+
 
 function TareasPage() {
-  const [tareas, setTareas] = useState([])
+  const {tareas, cargarTareas} = useTareas();
+  console.log(tareas);
 
   useEffect(() => {
-    listarTareasResquest()
-      .then((response) => {
-       setTareas(response.data)
-      console.log(response.data) 
-      });
+      cargarTareas();
+    }, []);
+
   return (
-    <div>
+    <div className='grid grid-cols-3 gap-2'>
       {
-        tareas.map((tarea, i) => (
-          <Card key = {tarea.id}>
-            <h3>{tarea.titulo}</h3>
-            <p>{tarea.descripcion}</p>
-          </Card>
-        ))
+        tareas.map((tarea) => (
+          <CardTareas tarea = {tarea} key={tarea.id}/>
+        )
+        )
       }
     </div>
-  )
+  );
 }
 
 export default TareasPage
