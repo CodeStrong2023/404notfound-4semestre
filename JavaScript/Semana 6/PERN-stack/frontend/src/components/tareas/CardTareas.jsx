@@ -1,15 +1,16 @@
 import {Card, Button} from "../ui";
 import { useTareas } from "../../context/TareasContext";
 import { useNavigate } from "react-router-dom";
+import { PiTrashSimpleLight } from "react-icons/pi";
 
 export function CardTareas({ tarea }){
     const { elminarTarea } = useTareas();
     const navigate = Navigate();
     return (
-        <Card key = {tarea.id} className="py-4 px-7">
+        <Card key = {tarea.id} className="py-4 px-7 justify-center flex flex-col">
         <div className="flex justify-between items-center">
             <h1 className='text-2xl font-bold'>{tarea.titulo}</h1>
-            <p>{tarea.descripcion}</p>
+            <p className="py-4">{tarea.descripcion}</p>
         </div>
         <div className="flex justify-end gap-x-2">
             <Button
@@ -21,7 +22,8 @@ export function CardTareas({ tarea }){
                     await elminarTarea(tarea.id);
                 }
             }}
-            >Eliminar</Button>
+            ><PiTrashSimpleLight className="text-white"/>
+            Eliminar</Button>
         </div>
         </Card>
     );
