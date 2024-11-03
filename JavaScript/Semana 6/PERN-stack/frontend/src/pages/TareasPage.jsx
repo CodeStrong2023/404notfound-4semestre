@@ -20,7 +20,7 @@ function TareasPage() {
     }
 
   return (
-    <div className='grid grid-cols-3 gap-2'>
+    <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-2'>
       {
         tareas.map((tarea) => (
           <CardTareas tarea = {tarea} key={tarea.id}/>

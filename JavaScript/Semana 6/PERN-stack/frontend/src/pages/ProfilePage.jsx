@@ -4,7 +4,7 @@ function ProfilePage() {
   const {user} = useAuth ();
   return (
     <div>
-      {JSON.stringify(user, null, 2)}
+      <pre>{JSON.stringify(user, null, 2)}</pre>
     </div>
   )
 }
