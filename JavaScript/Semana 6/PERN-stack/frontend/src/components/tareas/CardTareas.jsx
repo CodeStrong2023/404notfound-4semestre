@@ -1,7 +1,10 @@
 import {Card, Button} from "../ui";
 import { useTareas } from "../../context/TareasContext";
 import { useNavigate } from "react-router-dom";
-import { PiTrashSimpleLight } from "react-icons/pi";
+import { PiTrashSimpleLight, PiPencil} from "react-icons/pi";
+import { text } from "express";
+
+
 
 export function CardTareas({ tarea }){
     const { elminarTarea } = useTareas();
@@ -14,7 +17,9 @@ export function CardTareas({ tarea }){
         </div>
         <div className="flex justify-end gap-x-2">
             <Button
-                onClick={() => navigate(`/tareas/${tarea.id}/editar`)}
+                onClick={() => navigate(`/tareas/${tarea.id}/editar`)}><PiPencil className = "text-white"/>
+                    
+                }
             >Editar</Button>
             <Button className="bg-red-500 hover:bg-red-600"
             onClick={async () => {
