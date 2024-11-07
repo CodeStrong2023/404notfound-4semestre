@@ -31,3 +31,10 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Aplication.Properties ###
+/src/main/resources/application.yml
+
+### Project images ###
+/Capturas/
+/.mvn/
