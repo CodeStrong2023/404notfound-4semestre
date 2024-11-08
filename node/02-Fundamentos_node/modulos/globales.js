@@ -38,3 +38,5 @@ global.miVariable = 'mi variable global'; // Se establece la variable global
 console.log(miVariable); // Se accede a la variable a través de global
 
 
+
+
