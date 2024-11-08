@@ -8,3 +8,4 @@ function leer(ruta, cb){
 }
 
 leer('${__dirname}/archivo.txt', console.log);// Sintaxis ES6
+
