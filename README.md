@@ -5,7 +5,16 @@ Aquí subiremos las clases, ejercicios y tareas en equipo del 4to Semestre de la
 
 
 # En este semestre trabajamos con:
-<p align="left"> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> </a>  <a href="https://www.python.org" target="_blank" rel="noreferrer"> </p>
+
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=FFD43B&style=for-the-badge)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Java](https://img.shields.io/badge/Java-orange?logo=openjdk&logoColor=white&style=for-the-badge)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) 
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) 
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?logo=postgresql&logoColor=white&style=for-the-badge)
+
 
 # Equipo 404 NotFound 💻
 
@@ -103,12 +112,12 @@ Aquí subiremos las clases, ejercicios y tareas en equipo del 4to Semestre de la
     <td>11</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
+    <td>EnzoAstorga</td>
+    <td>12</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
+    <td>Sebastián Betancurth</td>
+    <td>13</td>
 
   </tr>
 </table>

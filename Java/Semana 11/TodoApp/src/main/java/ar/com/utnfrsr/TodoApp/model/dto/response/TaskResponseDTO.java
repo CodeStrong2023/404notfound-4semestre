@@ -14,4 +14,3 @@ public class TaskResponseDTO {
     private LocalTime time;
     private boolean finished;
 }
-
